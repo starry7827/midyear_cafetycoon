@@ -44,6 +44,12 @@ TagManager:
   - name: Floor
     uniqueID: 2805565255
     locked: 0
+  - name: SampleBack
+    uniqueID: 1039142903
+    locked: 0
+  - name: FrontCounter
+    uniqueID: 1126482601
+    locked: 0
   - name: Player
     uniqueID: 2266476625
     locked: 0

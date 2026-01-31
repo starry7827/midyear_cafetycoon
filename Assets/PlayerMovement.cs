@@ -6,11 +6,13 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveInput;
     public Animator animator;
+    public SpriteRenderer rend;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -26,6 +28,17 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Moving", false);
         }
     }
+
+    /* void LateUpdate() {
+        Vector3 worldPos = transform.position;
+        if (worldPos.x <= -4 && worldPos.x >= -90 && worldPos.y > -9) {
+            rend.sortingOrder = Mathf.RoundToInt((-worldPos.y+20) * 100);
+        } else {
+            rend.sortingOrder = 100;
+        }
+
+        //Order in Layer = -Y position * some number
+    } */
 
     void FixedUpdate()
     {
