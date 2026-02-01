@@ -24,12 +24,15 @@ public class YSort : MonoBehaviour
             y = rend.bounds.min.y;
 
         if (y > ((x/3) - 8.25)) {
-            rend.sortingOrder = -100;
+            rend.sortingOrder = -1;
         } else {
             rend.sortingOrder = 1;
         }
-        if (x <= -71 && transform.position.y < 0.7) {
+        if (x <= -83 && transform.position.y <= -2) {
             rend.sortingOrder = 1;
+        }
+        if (x >= -61 && transform.position.y >= 30 && x <= -41.5 && transform.position.y <= 38.5) {
+            rend.sortingOrder = -2;
         }
 
         // rend.sortingOrder = Mathf.RoundToInt(-y * 100);

@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput != Vector2.zero) {
             animator.SetBool("Moving", true);
             animator.SetFloat("MoveX", moveInput.x);
+            animator.SetFloat("MoveY", moveInput.y);
         }
         else {
             animator.SetBool("Moving", false);

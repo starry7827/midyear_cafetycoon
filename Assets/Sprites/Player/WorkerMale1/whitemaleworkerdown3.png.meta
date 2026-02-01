@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 67977391f52054f05ac0fe893b2783bb
+guid: cdb6b9131b9dd412f8d741e0a6ba4e84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1313130037747709939
-    second: Left3WhiteMaleWorker_0
+      213: -5315673763557330934
+    second: whitemaleworkerdown3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Left3WhiteMaleWorker_0
+      name: whitemaleworkerdown3_0
       rect:
         serializedVersion: 2
-        x: 119
+        x: 159
         y: 9
-        width: 242
-        height: 432
+        width: 162
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f7f8d3efcc293210800000000000000
-      internalID: 1313130037747709939
+      spriteID: a003d4d20eeea36b0800000000000000
+      internalID: -5315673763557330934
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Left3WhiteMaleWorker_0: 1313130037747709939
+      whitemaleworkerdown3_0: -5315673763557330934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
