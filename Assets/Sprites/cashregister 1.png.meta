@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a9bd1e0bbd23c485194b6e14563f0ad7
+guid: 87180725ecace420080ac3038631e7ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4122146012913232036
-    second: floor 1_0
+      213: 1693611338035717832
+    second: cashregister 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floor 1_0
+      name: cashregister 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1031
+        width: 310
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a86cfb65fdc43930800000000000000
-      internalID: 4122146012913232036
+      spriteID: 8c6613fe98ae08710800000000000000
+      internalID: 1693611338035717832
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      floor 1_0: 4122146012913232036
+      cashregister 1_0: 1693611338035717832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     public Animator animator;
     public SpriteRenderer rend;
+    private IInteractable currentInteractable;
 
     void Start()
     {
@@ -28,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
         else {
             animator.SetBool("Moving", false);
         }
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
+            Debug.Log("trying to interact: " + currentInteractable);
+            currentInteractable.Interact();
+        }
     }
 
     /* void LateUpdate() {
@@ -45,4 +50,30 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.linearVelocity = moveInput * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.isTrigger) return;
+        IInteractable interactable = other.GetComponent<IInteractable>();
+
+        if (interactable != null && interactable.CanInteract())
+        {
+            currentInteractable = interactable;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.isTrigger) return;
+        IInteractable interactable = other.GetComponent<IInteractable>();
+
+        if (interactable == currentInteractable)
+        {
+            currentInteractable.Close();
+            currentInteractable = null;
+
+        }
+    }
+
+
 }

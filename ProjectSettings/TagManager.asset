@@ -53,6 +53,9 @@ TagManager:
   - name: Player
     uniqueID: 2266476625
     locked: 0
+  - name: Items
+    uniqueID: 1378980143
+    locked: 0
   - name: Border
     uniqueID: 497249093
     locked: 0
