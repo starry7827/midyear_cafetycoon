@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
         else {
             animator.SetBool("Moving", false);
         }
+        if (Input.GetKeyDown(KeyCode.C) && currentInteractable != null) {
+            Debug.Log("trying to interact: " + currentInteractable);
+            currentInteractable.Interact();
+        }
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
             Debug.Log("trying to interact: " + currentInteractable);
             currentInteractable.Interact();
@@ -67,11 +71,13 @@ public class PlayerMovement : MonoBehaviour
         if (!other.isTrigger) return;
         IInteractable interactable = other.GetComponent<IInteractable>();
 
-        if (interactable == currentInteractable)
-        {
-            currentInteractable.Close();
-            currentInteractable = null;
+        if (interactable != null) {
+            interactable.Close();
+            if (interactable == currentInteractable)
+            {
+                currentInteractable = null;
 
+            }
         }
     }
 

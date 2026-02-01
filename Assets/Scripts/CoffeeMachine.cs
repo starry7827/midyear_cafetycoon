@@ -26,7 +26,7 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
     }
 
     public void Close() {
-        if (machineUI != null) {
+        if (machineUI != null && isOpened) {
             isOpened = CloseMachine();
         }
     }
