@@ -8,6 +8,10 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
     private int coffeeCount = 0;
     [SerializeField] private GameObject machineUI;
     private bool isOpened;
+    public Sprite reg;
+    public Sprite glow;
+    public SpriteRenderer rend;
+    private Transform trans;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -15,6 +19,27 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
     {
         return coffeeCount < maxCoffee;
     }
+
+    public void Glow() {
+    if (glow != null) {
+        Vector3 pos = trans.position;
+        pos.x = -71.5f;
+        trans.position = pos;
+
+        rend.sprite = glow;
+    }
+}
+
+public void Regular() {
+    if (reg != null) {
+        Vector3 pos = trans.position;
+        pos.x = -72f;
+        trans.position = pos;
+
+        rend.sprite = reg;
+    }
+}
+
 
     public void Interact()
     {
@@ -41,9 +66,14 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
         return false;
     }
 
+    public KeyCode GetInteractKey() {
+        return KeyCode.C;
+    }
+
     void Start()
     {
-        
+        rend = GetComponent<SpriteRenderer>();
+        trans = GetComponent<Transform>();
     }
 
     // Update is called once per frame

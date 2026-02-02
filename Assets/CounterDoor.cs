@@ -7,6 +7,7 @@ public class CounterDoor : MonoBehaviour, IInteractable
     public Sprite closedDoor;
     public GameObject collision1;
     public GameObject collision2;
+    public Sprite glowingDoor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Interact() {
         changeSprite();
@@ -22,6 +23,18 @@ public class CounterDoor : MonoBehaviour, IInteractable
         }
     }
 
+    public void Glow() {
+        if (glowingDoor != null) {
+            rend.sprite = glowingDoor;
+        }
+    }
+
+    public void Regular() {
+        if (closedDoor != null) {
+            rend.sprite = closedDoor;
+        }
+    }
+
     public bool CanInteract() {
         return true;
     }
@@ -33,6 +46,10 @@ public class CounterDoor : MonoBehaviour, IInteractable
             collision2.SetActive(true);
         }
 
+    }
+
+    public KeyCode GetInteractKey() {
+        return KeyCode.E;
     }
 
     void Start()

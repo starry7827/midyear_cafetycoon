@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer rend;
     private IInteractable currentInteractable;
+    [SerializeField] private Collider2D interactionTrigger;
+    [SerializeField] private Collider2D physics;
+    // private GameObject interactable;
 
     void Start()
     {
@@ -29,13 +32,12 @@ public class PlayerMovement : MonoBehaviour
         else {
             animator.SetBool("Moving", false);
         }
-        if (Input.GetKeyDown(KeyCode.C) && currentInteractable != null) {
-            Debug.Log("trying to interact: " + currentInteractable);
-            currentInteractable.Interact();
-        }
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
-            Debug.Log("trying to interact: " + currentInteractable);
-            currentInteractable.Interact();
+        if (currentInteractable != null) {
+            KeyCode key = currentInteractable.GetInteractKey();
+            if (Input.GetKeyDown(key)) {
+                Debug.Log("trying to interact: " + currentInteractable);
+                currentInteractable.Interact();
+            }
         }
     }
 
@@ -57,29 +59,43 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.isTrigger) return;
-        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (!interactionTrigger.IsTouching(other) || !other.isTrigger || physics.IsTouching(other)) return;
 
-        if (interactable != null && interactable.CanInteract())
-        {
-            currentInteractable = interactable;
-        }
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable == null || !interactable.CanInteract()) return;
+
+        currentInteractable = interactable;
+        currentInteractable.Glow();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.isTrigger) return;
+        if (!other.isTrigger || interactionTrigger.IsTouching(other)) return;
         IInteractable interactable = other.GetComponent<IInteractable>();
 
         if (interactable != null) {
             interactable.Close();
+            interactable.Regular();
             if (interactable == currentInteractable)
             {
                 currentInteractable = null;
 
             }
-        }
+        } 
     }
 
+    /* private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("Exit called. currentInteractable = " + currentInteractable);
+        if (currentInteractable == null) return;
+        if (interactionTrigger.IsTouching(other)) return;
 
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != currentInteractable) return;
+
+        Debug.Log("Exit called. currentInteractable = " + currentInteractable);
+        currentInteractable.Close();
+        currentInteractable.Regular();
+        currentInteractable = null;
+    } */
 }
