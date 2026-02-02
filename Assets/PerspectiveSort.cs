@@ -23,7 +23,7 @@ public class YSort : MonoBehaviour
         else
             y = rend.bounds.min.y;
 
-        if (y > ((x/3) - 8.25)) {
+        if (y > ((x/3) - .25)) {
             rend.sortingOrder = -1;
         } else {
             rend.sortingOrder = 3;
