@@ -2952,6 +2952,7 @@ MonoBehaviour:
   hotcup: {fileID: 21300000, guid: 69e07120157684f45b5b2dd370a9b37a, type: 3}
   coldcup: {fileID: 21300000, guid: 744b51befc9fb43a2b05e56a7002d4db, type: 3}
   cupType: 0
+  cfm: {fileID: 1216293276}
 --- !u!114 &1056138514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4243,7 +4244,7 @@ MonoBehaviour:
   Idle: 0
   DrinkSelected: 0
   MachineState: 
-  currentCup: 
+  currentCup: 0
 --- !u!1 &1227486500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6870,7 +6871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1874125166
 RectTransform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
     public Sprite glow;
     public SpriteRenderer rend;
     private Transform trans;
+    private CoffeeMachineLogic cfm;
+    [SerializeField] public CupDrop cd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -54,6 +56,8 @@ public void Regular() {
         if (machineUI != null && isOpened) {
             isOpened = CloseMachine();
         }
+        cfm.reset();
+        cd.reset();
     }
 
     private bool OpenMachine() {
@@ -74,6 +78,7 @@ public void Regular() {
     {
         rend = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
+        cfm = GetComponent<CoffeeMachineLogic>();
     }
 
     // Update is called once per frame

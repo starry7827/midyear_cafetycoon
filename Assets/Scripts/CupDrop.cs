@@ -9,15 +9,8 @@ public class CupDrop : MonoBehaviour, IDropHandler
     [SerializeField] private Sprite hotcup;
     [SerializeField] private Sprite coldcup;
     [SerializeField] public CupType cupType;
+    [SerializeField] public CoffeeMachineLogic cfm;
     // [SerializeField] private Script coffeeMachine;
-
-    public enum Drink {
-        HotLatte, ColdLatte, Espresso
-    }
-
-    public enum CupType {
-        HotCup, ColdCup
-    }
 
     void Start() {
         rend = cupObject.GetComponent<Image>();
@@ -27,13 +20,18 @@ public class CupDrop : MonoBehaviour, IDropHandler
         if (data.pointerDrag != null) {
             Debug.Log("Dropped Object was: " + data.pointerDrag.name);
             cupObject.SetActive(true);
+            cfm.tryEnable();
             if (data.pointerDrag.name == "HotCup") {
-                //coffeeMachine.setCup(CupType.HotCup);
+                cfm.setCup(CupType.HotCup);
                 rend.sprite = hotcup;
             } if (data.pointerDrag.name == "ColdCup") {
-                //coffeeMachine.setCup(CupType.ColdCup);
+                cfm.setCup(CupType.ColdCup);
                 rend.sprite = coldcup;
             }
         }
+    }
+
+    public void reset() {
+        cupObject.SetActive(false);
     }
 }
