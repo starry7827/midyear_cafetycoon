@@ -3,5 +3,5 @@ public enum Drink {
 }
 
 public enum CupType {
-    HotCup, ColdCup, NoCup
+    HotCup, ColdCup, CoffeeMug, SmallCup, NoCup
 }

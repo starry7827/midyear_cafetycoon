@@ -4,16 +4,16 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
 {
     public bool IsFull { get; private set; }
     public GameObject itemPrefab;
-    [SerializeField] private int maxCoffee = 2;
     private int coffeeCount = 0;
-    [SerializeField] private GameObject machineUI;
     private bool isOpened;
     public Sprite reg;
     public Sprite glow;
     public SpriteRenderer rend;
     private Transform trans;
     private CoffeeMachineLogic cfm;
-    [SerializeField] public CupDrop cd;
+    [SerializeField] private int maxCoffee = 2;
+    [SerializeField] private GameObject machineUI;
+    [SerializeField] private CupDrop cd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 

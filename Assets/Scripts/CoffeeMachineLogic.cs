@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using TMPro;
 
 public class CoffeeMachineLogic : MonoBehaviour
 {
@@ -9,8 +11,12 @@ public class CoffeeMachineLogic : MonoBehaviour
     public string MachineState;
     public CupType currentCup;
     public Drink drink;
+    private float pourDuration;
+    [SerializeField] private Animator animator;
     [SerializeField] private Image buttonBg;
     [SerializeField] private Button button;
+    [SerializeField] private GameObject coffeeCupImg;
+    [SerializeField] private TextMeshProUGUI timerText;
 
     // Coffee Machine Logic 
     // ------------------------------------------------------------------------------------------------------
@@ -21,6 +27,7 @@ public class CoffeeMachineLogic : MonoBehaviour
         drink = Drink.NoDrink;
         buttonBg.color = new Color32(247, 103, 103, 255);
         button.interactable = false;
+        // animator = GetComponentInChild<Animator>();
     }
 
     public void reset()
@@ -28,7 +35,9 @@ public class CoffeeMachineLogic : MonoBehaviour
         currentCup = CupType.NoCup;
         drink = Drink.NoDrink;
         buttonBg.color = new Color32(247, 103, 103, 255);
+        updateTimeUI(0f);
         button.interactable = false;
+        coffeeCupImg.SetActive(false);
     }
 
     public void HotLatte()
@@ -36,30 +45,72 @@ public class CoffeeMachineLogic : MonoBehaviour
         drink = Drink.HotLatte;
         DrinkSelected = true;
         MachineState = "DrinkSelected";
+        updateTimeUI(12f);
         tryEnable();
     }
     public void ColdLatte()
     {
         drink = Drink.ColdLatte;
         MachineState = "DrinkSelected";
+        updateTimeUI(10f);
         tryEnable();
     }
     public void Espresso()
     {
         drink = Drink.Espresso;
         MachineState = "DrinkSelected";
+        updateTimeUI(6f);
         tryEnable();
     }
 
     public void Pour()
     {
-        MachineState = "Pouring";
-        Debug.Log("pouring: " + coffee);
+        StartCoroutine(Pouring());
+    }
+
+    private IEnumerator Pouring() {
+        if (drink == Drink.HotLatte) {
+            Debug.Log("Pouring a Hot Latte with a side of 67!");
+            pourDuration = 12f;
+            animator.SetBool("isHotLattePouring", true);
+        } else if (drink == Drink.ColdLatte) {
+            Debug.Log("Matter of fact let's have a cold latte pls!");
+            pourDuration = 10f;
+            animator.SetBool("isColdLattePouring", true);
+        } else if (drink == Drink.Espresso) {
+            Debug.Log("I like small bitter amounts like espresso.");
+            pourDuration = 6f;
+        }
+        float remaining = pourDuration;
+        while (remaining > 0f) {
+            remaining -= Time.deltaTime;
+            updateTimeUI(remaining);
+            Debug.Log(remaining);
+            yield return null;
+        }
+        updateTimeUI(0f);
+        animator.SetBool("isColdLattePouring", false);
+        animator.SetBool("isHotLattePouring", false);
+        //reset();
+    }
+
+    private void updateTimeUI(float remaining) {
+        int minutes = Mathf.FloorToInt(remaining / 60f);
+        int seconds = Mathf.FloorToInt(remaining % 60f);
+        timerText.text = $"{minutes:00}:{seconds:00}";
     }
 
     public void setCup(CupType cupType)
     {
         currentCup = cupType;
+        animator.SetBool("HotLatteSel", false);
+        animator.SetBool("ColdLatteSel", false);
+        if (currentCup == CupType.HotCup) {
+            animator.SetBool("HotLatteSel", true);
+        }
+        if (currentCup == CupType.ColdCup) {
+            animator.SetBool("ColdLatteSel", true);
+        }
         Debug.Log("Set Cup Type to: " + cupType);
     }
 
@@ -67,20 +118,23 @@ public class CoffeeMachineLogic : MonoBehaviour
 
     public void tryEnable()
     {
-        if (drink != null && currentCup != null)
-        {
-            if (drink == Drink.HotLatte && currentCup == CupType.HotCup)
+            if (drink == Drink.HotLatte && (currentCup == CupType.HotCup || currentCup == CupType.CoffeeMug))
             {
                 button.interactable = true;
                 Debug.Log("Can Pour " + drink + " in " + currentCup);
                 buttonBg.color = new Color32(124, 247, 103, 255);
-            }
-            if (drink == Drink.ColdLatte && currentCup == CupType.ColdCup)
+            } else if (drink == Drink.ColdLatte && currentCup == CupType.ColdCup)
             {
                 button.interactable = true;
                 Debug.Log("Can Pour " + drink + " in " + currentCup);
                 buttonBg.color = new Color32(124, 247, 103, 255);
+            } else if (drink == Drink.Espresso && currentCup == CupType.SmallCup) {
+                button.interactable = true;
+                Debug.Log("Can Pour " + drink + " in " + currentCup);
+                buttonBg.color = new Color32(124, 247, 103, 255);
+            } else {
+                buttonBg.color = new Color32(247, 103, 103, 255);
+                button.interactable = false;
             }
-        }
     }
 }
