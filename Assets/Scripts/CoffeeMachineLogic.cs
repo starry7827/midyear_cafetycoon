@@ -17,6 +17,8 @@ public class CoffeeMachineLogic : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private GameObject coffeeCupImg;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameObject coldCoffeePour;
+
 
     // Coffee Machine Logic 
     // ------------------------------------------------------------------------------------------------------
@@ -73,10 +75,12 @@ public class CoffeeMachineLogic : MonoBehaviour
             Debug.Log("Pouring a Hot Latte with a side of 67!");
             pourDuration = 12f;
             animator.SetBool("isHotLattePouring", true);
+
         } else if (drink == Drink.ColdLatte) {
             Debug.Log("Matter of fact let's have a cold latte pls!");
             pourDuration = 10f;
             animator.SetBool("isColdLattePouring", true);
+            coldCoffeePour.SetActive(true);
         } else if (drink == Drink.Espresso) {
             Debug.Log("I like small bitter amounts like espresso.");
             pourDuration = 6f;
@@ -91,6 +95,8 @@ public class CoffeeMachineLogic : MonoBehaviour
         updateTimeUI(0f);
         animator.SetBool("isColdLattePouring", false);
         animator.SetBool("isHotLattePouring", false);
+        coldCoffeePour.SetActive(false);
+
         //reset();
     }
 
