@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 366eee214a68d45a289320d5e26df6b1
+guid: ce1a312bfd029457d829bc042cdefa6f
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7601489634978895471
     second: coldlattepouring_28_0
-  - first:
-      213: -8887896719390397315
-    second: coldlattepouring_28_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,7 +116,7 @@ TextureImporter:
       name: coldlattepouring_28_0
       rect:
         serializedVersion: 2
-        x: 89
+        x: 99
         y: 189
         width: 12
         height: 11
@@ -133,28 +130,6 @@ TextureImporter:
       bones: []
       spriteID: f661bb07c8aed7960800000000000000
       internalID: 7601489634978895471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coldlattepouring_28_1
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 169
-        width: 22
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7c20681609d7a480800000000000000
-      internalID: -8887896719390397315
       vertices: []
       indices: 
       edges: []
@@ -174,7 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       coldlattepouring_28_0: 7601489634978895471
-      coldlattepouring_28_1: -8887896719390397315
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -105,6 +105,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-4189362093495008260
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: reset
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8489813070266042772}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-1822318854164601139
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -147,7 +172,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5418106077615461915}
-    m_Position: {x: 870, y: -60, z: 0}
+    m_Position: {x: 890, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8090267387050326200}
     m_Position: {x: 320, y: -60, z: 0}
@@ -159,7 +184,7 @@ AnimatorStateMachine:
     m_Position: {x: 340, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3244415707802289358}
-    m_Position: {x: 890, y: 240, z: 0}
+    m_Position: {x: 900, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 473922207353039782}
     m_Position: {x: 620, y: 230, z: 0}
@@ -186,6 +211,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: ColdLatteSel
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5508506195528479807}
@@ -229,6 +257,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: HotLatteSel
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: reset
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -334,7 +368,8 @@ AnimatorState:
   m_Name: HotLatteFull
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 6113911508088498089}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -360,7 +395,8 @@ AnimatorState:
   m_Name: ColdLatteFull
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: -4189362093495008260}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -404,6 +440,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &6113911508088498089
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: reset
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8489813070266042772}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &6191105635995447605
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -417,6 +478,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: HotLatteSel
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8090267387050326200}

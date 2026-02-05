@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe691783e12be4afba7ff99aaca09f57
+guid: 93d4bf3a00a3044529a659c9bccb8464
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 2998987555120801848
     second: coldlattepouring_18_2
+  - first:
+      213: 1464676295293212466
+    second: coldlattepouring_18_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,9 +126,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 129
+        y: 149
         width: 22
-        height: 71
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,9 +148,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 79
+        y: 129
         width: 22
-        height: 32
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,7 +170,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 49
+        y: 99
         width: 22
         height: 22
       alignment: 0
@@ -180,6 +183,28 @@ TextureImporter:
       bones: []
       spriteID: 838eac4ca4b8e9920800000000000000
       internalID: 2998987555120801848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coldlattepouring_18_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 69
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23713e39453935410800000000000000
+      internalID: 1464676295293212466
       vertices: []
       indices: 
       edges: []
@@ -201,6 +226,7 @@ TextureImporter:
       coldlattepouring_18_0: -7849390953379212480
       coldlattepouring_18_1: -7566829042839715003
       coldlattepouring_18_2: 2998987555120801848
+      coldlattepouring_18_3: 1464676295293212466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

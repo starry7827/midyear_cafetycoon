@@ -4853,7 +4853,7 @@ MonoBehaviour:
   button: {fileID: 1128689822}
   coffeeCupImg: {fileID: 1691335213}
   timerText: {fileID: 1158773892}
-  coldCoffeePour: {fileID: 1372852296}
+  pourObject: {fileID: 1372852296}
   claimDrink: {fileID: 969615885}
 --- !u!1 &1227486500
 GameObject:
@@ -5564,7 +5564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.33, y: -10.8}
+  m_AnchoredPosition: {x: 0.33, y: -20.8}
   m_SizeDelta: {x: 130, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372852298
@@ -7929,7 +7929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1874125166
 RectTransform:
   m_ObjectHideFlags: 0

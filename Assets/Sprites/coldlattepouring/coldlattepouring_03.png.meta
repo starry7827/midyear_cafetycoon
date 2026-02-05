@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b27dd44416108492fbfb7f68e0589f70
+guid: 32e3b36672ca44b1288dc149e8850234
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,9 +14,6 @@ TextureImporter:
   - first:
       213: 8943764057691624176
     second: coldlattepouring_03_3
-  - first:
-      213: -1477429807496930105
-    second: coldlattepouring_03_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,9 +126,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 189
+        y: 129
         width: 22
-        height: 11
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,9 +148,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 119
+        y: 99
         width: 22
-        height: 62
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,9 +170,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 89
-        y: 79
+        y: 69
         width: 22
-        height: 32
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,28 +193,6 @@ TextureImporter:
         serializedVersion: 2
         x: 89
         y: 49
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f29d9d3602ae1c70800000000000000
-      internalID: 8943764057691624176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coldlattepouring_03_4
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 29
         width: 12
         height: 12
       alignment: 0
@@ -228,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cc5297fa6d1f7be0800000000000000
-      internalID: -1477429807496930105
+      spriteID: 0f29d9d3602ae1c70800000000000000
+      internalID: 8943764057691624176
       vertices: []
       indices: 
       edges: []
@@ -252,7 +227,6 @@ TextureImporter:
       coldlattepouring_03_1: 5172169370021725587
       coldlattepouring_03_2: -1736471915289631817
       coldlattepouring_03_3: 8943764057691624176
-      coldlattepouring_03_4: -1477429807496930105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -18,7 +18,7 @@ public class CoffeeMachineLogic : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private GameObject coffeeCupImg;
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameObject coldCoffeePour;
+    [SerializeField] private GameObject pourObject;
     [SerializeField] private GameObject claimDrink;
 
 
@@ -41,7 +41,9 @@ public class CoffeeMachineLogic : MonoBehaviour
         buttonBg.color = new Color32(247, 103, 103, 255);
         updateTimeUI(0f);
         button.interactable = false;
+        cupAnimator.SetBool("reset", true);
         coffeeCupImg.SetActive(false);
+        claimDrink.SetActive(false);
     }
 
     public void HotLatte()
@@ -55,6 +57,7 @@ public class CoffeeMachineLogic : MonoBehaviour
     public void ColdLatte()
     {
         drink = Drink.ColdLatte;
+        DrinkSelected = true;
         MachineState = "DrinkSelected";
         updateTimeUI(10f);
         tryEnable();
@@ -62,6 +65,7 @@ public class CoffeeMachineLogic : MonoBehaviour
     public void Espresso()
     {
         drink = Drink.Espresso;
+        DrinkSelected = true;
         MachineState = "DrinkSelected";
         updateTimeUI(6f);
         tryEnable();
@@ -76,12 +80,14 @@ public class CoffeeMachineLogic : MonoBehaviour
         if (drink == Drink.HotLatte) {
             Debug.Log("Pouring a Hot Latte with a side of 67!");
             pourDuration = 12f;
+            pourObject.SetActive(true);
             cupAnimator.SetBool("isHotLattePouring", true);
+            pourAnimator.SetBool("isHotLattePouring", true);
 
         } else if (drink == Drink.ColdLatte) {
             Debug.Log("Matter of fact let's have a cold latte pls!");
             pourDuration = 10f;
-            coldCoffeePour.SetActive(true);
+            pourObject.SetActive(true);
             cupAnimator.SetBool("isColdLattePouring", true);
             pourAnimator.SetBool("isColdLattePouring", true);
         } else if (drink == Drink.Espresso) {
@@ -99,7 +105,8 @@ public class CoffeeMachineLogic : MonoBehaviour
         cupAnimator.SetBool("isColdLattePouring", false);
         cupAnimator.SetBool("isHotLattePouring", false);
         pourAnimator.SetBool("isColdLattePouring", false);
-        coldCoffeePour.SetActive(false);
+        pourAnimator.SetBool("isHotLattePouring", false);
+        pourObject.SetActive(false);
         claimDrink.SetActive(true);
 
         //reset();
@@ -116,10 +123,13 @@ public class CoffeeMachineLogic : MonoBehaviour
         currentCup = cupType;
         cupAnimator.SetBool("HotLatteSel", false);
         cupAnimator.SetBool("ColdLatteSel", false);
+        cupAnimator.SetBool("reset", false);
         if (currentCup == CupType.HotCup) {
+            cupAnimator.SetBool("reset", false);
             cupAnimator.SetBool("HotLatteSel", true);
         }
         if (currentCup == CupType.ColdCup) {
+            cupAnimator.SetBool("reset", false);
             cupAnimator.SetBool("ColdLatteSel", true);
         }
         Debug.Log("Set Cup Type to: " + cupType);
