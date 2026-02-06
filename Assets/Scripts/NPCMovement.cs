@@ -55,5 +55,6 @@ public class NPCMovement : MonoBehaviour
     public void addPoint(Vector2 point)
     {
         paths.Enqueue(point);
+        
     }
 }

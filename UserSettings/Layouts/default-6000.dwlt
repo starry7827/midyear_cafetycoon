@@ -8,6 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -32,74 +33,32 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+=======
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 156
     y: 72
     width: 1283
     height: 803
+=======
+    x: 0
+    y: 42
+    width: 1440
+    height: 810
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_ShowMode: 4
-  m_Title: Project
-  m_RootView: {fileID: 5}
+  m_Title: Game
+  m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
-  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1359
-    height: 796
-  m_MinSize: {x: 50, y: 76}
-  m_MaxSize: {x: 4000, y: 4026}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.SplitView
-  m_Children:
-  - {fileID: 3}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1359
-    height: 796
-  m_MinSize: {x: 50, y: 76}
-  m_MaxSize: {x: 4000, y: 4026}
-  vertical: 0
-  controlID: 178
-  draggingID: 0
---- !u!114 &5
+  m_Maximized: 1
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,22 +71,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 6}
-  - {fileID: 8}
-  - {fileID: 7}
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1283
     height: 803
+=======
+    width: 1440
+    height: 810
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 36
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &6
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,12 +108,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1283
+    width: 1440
     height: 36
   m_MinSize: {x: 50, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
---- !u!114 &7
+  m_ActualView: {fileID: 12}
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,12 +129,17 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 783
     width: 1283
+=======
+    y: 790
+    width: 1440
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &8
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,20 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 9}
-  - {fileID: 14}
+  - {fileID: 6}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1283
-    height: 747
+    width: 1440
+    height: 754
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 209
+  controlID: 126
   draggingID: 0
---- !u!114 &9
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,20 +178,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+  - {fileID: 7}
   - {fileID: 10}
-  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 996
-    height: 747
+    width: 1118
+    height: 754
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 210
+  controlID: 127
   draggingID: 0
---- !u!114 &10
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,20 +204,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 11}
-  - {fileID: 12}
+  - {fileID: 8}
+  - {fileID: 9}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 996
-    height: 506.5
+    width: 1118
+    height: 511
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 211
+  controlID: 128
   draggingID: 0
---- !u!114 &11
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,14 +233,134 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+    y: 36
+    width: 1283
+    height: 747
+  m_MinSize: {x: 300, y: 112}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 209
+  draggingID: 0
+=======
     y: 0
-    width: 205.5
-    height: 506.5
+    width: 230.5
+    height: 511
   m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 230.5
+    y: 0
+<<<<<<< HEAD
+    width: 996
+    height: 747
+  m_MinSize: {x: 200, y: 112}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 210
+  draggingID: 0
+=======
+    width: 887.5
+    height: 511
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Selected: 1
+  m_LastSelected: 2
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+<<<<<<< HEAD
+    y: 0
+    width: 996
+    height: 506.5
+  m_MinSize: {x: 200, y: 56}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 211
+  draggingID: 0
+=======
+    y: 511
+    width: 1118
+    height: 243
+  m_MinSize: {x: 101, y: 126}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 18}
   m_Panes:
+  - {fileID: 17}
   - {fileID: 18}
+  - {fileID: 19}
+  m_Selected: 1
+  m_LastSelected: 0
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1118
+    y: 0
+<<<<<<< HEAD
+    width: 205.5
+    height: 506.5
+  m_MinSize: {x: 201, y: 226}
+=======
+    width: 322
+    height: 754
+  m_MinSize: {x: 276, y: 76}
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &12
@@ -282,6 +371,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: GameView
@@ -405,6 +495,8 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+=======
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_EditorHideFlags: 0
   m_Script: {fileID: 13987, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -420,7 +512,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1283
+    width: 1440
     height: 36
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -677,7 +769,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &17
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,10 +790,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 438
-    y: 108
-    width: 811
-    height: 749
+    x: 230.5
+    y: 78
+    width: 885.5
+    height: 485
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1188,9 +1280,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 68.53589, y: 91.23849, z: 0}
     speed: 2
     m_Value: {x: 92.81083, y: 86.94102, z: 2.8297536}
+=======
+    m_Target: {x: 78.6253, y: 1.2883672, z: -0.91919076}
+    speed: 2
+    m_Value: {x: 78.6253, y: 1.2883672, z: -0.91919076}
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1240,9 +1338,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 112.53402
     speed: 2
     m_Value: 119.72349
+=======
+    m_Target: 117.375496
+    speed: 2
+    m_Value: 117.375496
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1263,7 +1367,7 @@ MonoBehaviour:
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
-    m_SceneView: {fileID: 17}
+    m_SceneView: {fileID: 13}
     m_CameraOverscanSettings:
       m_Opacity: 50
       m_Scale: 1
@@ -1276,7 +1380,7 @@ MonoBehaviour:
     name: Contributors / Receivers
     section: Lighting
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1299,8 +1403,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 24
+<<<<<<< HEAD
     width: 204.5
     height: 480.5
+=======
+    width: 229.5
+    height: 485
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1321,10 +1430,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1312
-      - m_Data: 49362
-      - m_Data: 49406
-      - m_Data: 49740
+      - m_Data: -3026
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1342,7 +1448,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1350,7 +1456,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &19
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1371,10 +1477,15 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 206.5
+    x: 231.5
     y: 24
+<<<<<<< HEAD
     width: 788.5
     height: 480.5
+=======
+    width: 885.5
+    height: 485
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1394,7 +1505,7 @@ MonoBehaviour:
   m_ShowGizmos: 1
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1577, y: 887}
+  m_TargetSize: {x: 1650, y: 928}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1409,10 +1520,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -394.25
-    m_HBaseRangeMax: 394.25
-    m_VBaseRangeMin: -221.75
-    m_VBaseRangeMax: 221.75
+    m_HBaseRangeMin: -412.5
+    m_HBaseRangeMax: 412.5
+    m_VBaseRangeMin: -232
+    m_VBaseRangeMax: 232
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1430,16 +1541,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 788.5
       height: 459.5
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 394.25, y: 229.75}
+=======
+      width: 885.5
+      height: 464
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 442.75, y: 232}
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -394.25
       y: -229.75
       width: 788.5
@@ -1447,13 +1566,22 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1577, y: 961}
+=======
+      x: -442.75
+      y: -232
+      width: 885.5
+      height: 464
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1771, y: 970}
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
   m_showToolbar: 1
---- !u!114 &20
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1474,10 +1602,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 632.5
-    y: 108
-    width: 788.5
-    height: 641
+    x: 230.5
+    y: 78
+    width: 885.5
+    height: 485
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1497,15 +1625,16 @@ MonoBehaviour:
     - {fileID: -4348045669756931490, guid: 971a5e737412c4713bde0c98102b947f, type: 2}
     - {fileID: -1135875265817094914, guid: 7246eb981854948f99f55e840b591498, type: 2}
     - {fileID: -8943189746171791394, guid: 7ee7acb7098df4aeaae334db679814a7, type: 2}
+    - {fileID: -1353214910835545477, guid: 2e6fda4f5d859fb4b878da93e10c18be, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.77789474
+    - e00: 0.6495859
       e01: 0
       e02: 0
-      e03: 7.221039
+      e03: 26.503723
       e10: 0
-      e11: 0.77789474
+      e11: 0.6495859
       e12: 0
-      e13: 96.252625
+      e13: 134.07812
       e20: 0
       e21: 0
       e22: 1
@@ -1546,14 +1675,30 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.37433547
+    - e00: 0.5439864
       e01: 0
       e02: 0
-      e03: 53.51448
+      e03: 54.356674
       e10: 0
-      e11: 0.37433547
+      e11: 0.5439864
       e12: 0
-      e13: 247.77235
+      e13: 51.550026
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.72319585
+      e01: 0
+      e02: 0
+      e03: -6.695862
+      e10: 0
+      e11: 0.72319585
+      e12: 0
+      e13: 128.98454
       e20: 0
       e21: 0
       e22: 1
@@ -1563,9 +1708,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 7ee7acb7098df4aeaae334db679814a7, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 195d9e6ea9dfa4d6ab7b3fc150b513dc, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -8943189746171791394, guid: 7ee7acb7098df4aeaae334db679814a7, type: 2}
+  - m_Target: {fileID: 7745077931909510938, guid: 195d9e6ea9dfa4d6ab7b3fc150b513dc, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1578,7 +1723,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &21
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1600,9 +1745,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 530.5
     width: 995
     height: 214.5
+=======
+    y: 589
+    width: 1117
+    height: 217
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1627,7 +1778,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1637,25 +1788,29 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/miguelsylvestre/midyear_cafetycoon
+  m_LastProjectPath: C:\Users\super\mid year cafe tycoon!
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 9}
+    scrollPos: {x: 0, y: 43}
     m_SelectedIDs:
-    - m_Data: 50202
+    - m_Data: 51160
     m_LastClickedID:
-      m_Data: 50202
+      m_Data: 51160
     m_ExpandedIDs:
     - m_Data: 0
+<<<<<<< HEAD
     - m_Data: 50472
     - m_Data: 50474
     - m_Data: 50476
     - m_Data: 50478
     - m_Data: 50480
+=======
+    - m_Data: 50382
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1673,7 +1828,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1688,11 +1843,15 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
+<<<<<<< HEAD
     - m_Data: 50472
     - m_Data: 50474
     - m_Data: 50476
     - m_Data: 50478
     - m_Data: 50480
+=======
+    - m_Data: 50382
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1719,9 +1878,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs:
-    - m_Data: -2252
-    m_LastClickedInstanceID: -2252
+    m_SelectedInstanceIDs: []
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs:
     - m_Data: 55192
@@ -1743,7 +1901,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1751,11 +1909,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 65}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &22
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1776,10 +1934,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 427
-    y: 749
-    width: 995
-    height: 317
+    x: 0
+    y: 535
+    width: 1117
+    height: 217
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1793,7 +1951,7 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
---- !u!114 &23
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1832,7 +1990,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
   mForceToReOpen: 0
---- !u!114 &24
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1853,10 +2011,15 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 997
+    x: 1119
     y: 24
+<<<<<<< HEAD
     width: 286
     height: 721
+=======
+    width: 321
+    height: 728
+>>>>>>> d7c9865 (turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
