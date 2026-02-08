@@ -1,5 +1,5 @@
 public enum Drink {
-    HotLatte, ColdLatte, Espresso, NoDrink
+    HotLatte, ColdLatte, Espresso, HotCocoa, NoDrink
 }
 
 public enum CupType {

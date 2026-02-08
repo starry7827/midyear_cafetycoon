@@ -32,10 +32,10 @@ public class CupDrop : MonoBehaviour, IDropHandler
                 // rend.sprite = coldcup;
             } if (data.pointerDrag.name == "CoffeeMug") {
                 cfm.setCup(CupType.CoffeeMug);
-                rend.sprite = coffeemug;
+                // rend.sprite = coffeemug;
             } if (data.pointerDrag.name == "SmallCup") {
                 cfm.setCup(CupType.SmallCup);
-                rend.sprite = smallcup;
+                // rend.sprite = smallcup;
             }
         }
     }

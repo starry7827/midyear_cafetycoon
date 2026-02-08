@@ -24,13 +24,15 @@ public class PlayerMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
-        if (moveInput != Vector2.zero) {
-            animator.SetBool("Moving", true);
-            animator.SetFloat("MoveX", moveInput.x);
-            animator.SetFloat("MoveY", moveInput.y);
-        }
-        else {
-            animator.SetBool("Moving", false);
+        if (animator != null) {
+            if (moveInput != Vector2.zero) {
+                animator.SetBool("Moving", true);
+                animator.SetFloat("MoveX", moveInput.x);
+                animator.SetFloat("MoveY", moveInput.y);
+            }
+            else {
+                animator.SetBool("Moving", false);
+            }
         }
         if (currentInteractable != null) {
             KeyCode key = currentInteractable.GetInteractKey();
