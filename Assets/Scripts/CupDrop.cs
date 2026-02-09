@@ -19,7 +19,7 @@ public class CupDrop : MonoBehaviour, IDropHandler
     }
 
     public void OnDrop(PointerEventData data) {
-        cfm.reset();
+        cfm.resetDrink();
         if (data.pointerDrag != null) {
             Debug.Log("Dropped Object was: " + data.pointerDrag.name);
             cupObject.SetActive(true);

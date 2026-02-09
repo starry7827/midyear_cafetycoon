@@ -56,7 +56,7 @@ public void Regular() {
         if (machineUI != null && isOpened) {
             isOpened = CloseMachine();
         }
-        cfm.reset();
+        cfm.resetDrink();
         cd.reset();
     }
 
