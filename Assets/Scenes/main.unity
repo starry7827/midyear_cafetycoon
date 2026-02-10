@@ -203,7 +203,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1216293276}
         m_TargetAssemblyTypeName: CoffeeMachineLogic, Assembly-CSharp
-        m_MethodName: reset
+        m_MethodName: resetDrink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3550,7 +3550,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1216293276}
         m_TargetAssemblyTypeName: CoffeeMachineLogic, Assembly-CSharp
-        m_MethodName: reset
+        m_MethodName: claimDrinkFunc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5038,6 +5038,7 @@ MonoBehaviour:
   timerText: {fileID: 1158773892}
   pourObject: {fileID: 1372852296}
   claimDrink: {fileID: 969615885}
+  resetDrinkB: {fileID: 14369638}
 --- !u!1 &1227486500
 GameObject:
   m_ObjectHideFlags: 0
