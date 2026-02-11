@@ -5,3 +5,7 @@ public enum Drink {
 public enum CupType {
     HotCup, ColdCup, CoffeeMug, SmallCup, NoCup
 }
+
+public enum Food {
+    Crossaint, Cookie, Muffin
+}
