@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66db1ce262adc48388afa24d2b69b71a
+guid: 7316f2d582deefe4494241791dc21e88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3146191777480040966
-    second: coffeecup_0
+      213: -6352516625802974888
+    second: coffeemugwhippedcreamfilling_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coffeecup_0
+      name: coffeemugwhippedcreamfilling_0
       rect:
         serializedVersion: 2
-        x: 19
+        x: 0
         y: 0
-        width: 122
-        height: 160
+        width: 160
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 602e3fb90c489ab20800000000000000
-      internalID: 3146191777480040966
+      spriteID: 859204139c357d7a0800000000000000
+      internalID: -6352516625802974888
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coffeecup_0: 3146191777480040966
+      coffeemugwhippedcreamfilling_0: -6352516625802974888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

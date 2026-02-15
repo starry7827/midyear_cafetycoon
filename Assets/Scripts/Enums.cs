@@ -7,5 +7,5 @@ public enum CupType {
 }
 
 public enum Food {
-    Crossaint, Cookie, Muffin
+    Crossaint, Cookie, Muffin, NoFood
 }

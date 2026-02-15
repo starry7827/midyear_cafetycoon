@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66db1ce262adc48388afa24d2b69b71a
+guid: 56b75ebfaf119e64d98c5c32c6ab7381
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3146191777480040966
-    second: coffeecup_0
+      213: -6874244079546310429
+    second: coldlatte_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coffeecup_0
+      name: coldlatte_0
       rect:
         serializedVersion: 2
         x: 19
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 602e3fb90c489ab20800000000000000
-      internalID: 3146191777480040966
+      spriteID: 3e06f435e67c990a0800000000000000
+      internalID: -6874244079546310429
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coffeecup_0: 3146191777480040966
+      coldlatte_0: -6874244079546310429
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
