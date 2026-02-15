@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1902327595946225235}
   - component: {fileID: 7914747424347128235}
   - component: {fileID: 1405582505159304572}
+  - component: {fileID: -1791277873360851179}
   m_Layer: 0
   m_Name: NPC1
   m_TagString: Untagged
@@ -235,3 +236,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCOrder
   drink: 0
   food: 0
+--- !u!114 &-1791277873360851179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208606778082637732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54adbfa69f57f19479bdefbe08528576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCOrderPopUpController
+  popupPrefab: {fileID: 2846132527777857587, guid: bccb976e151c28747a799dd4d5e027e3, type: 3}
+  offset: {x: 0, y: 26, z: 0}

@@ -71,7 +71,7 @@ public class NPCManager : MonoBehaviour
 
     public bool npcReady()
     {
-        if (line.Count == 0) return false;
+        if (line.Count <= 0) return false;
 
         NPCMovement frontNPC = line[0];
         return Vector2.Distance(frontNPC.transform.position, frontPos) < 0.2f;
@@ -91,5 +91,11 @@ public class NPCManager : MonoBehaviour
         orderPlaced.setPath(new List<Vector2> { afterOrderPos });
 
         updateLinePos();
+    }
+
+    public NPCMovement GetFrontNPC()
+    {
+        if (line.Count == 0) return null;
+        return line[0];
     }
 }
