@@ -172,7 +172,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KaiWalkLeft
+  m_Name: NanamiWalkLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -187,7 +187,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3df597abfdb6e004392dc258550fd403, type: 2}
+  m_Motion: {fileID: 7400000, guid: d69efb51e30ad444e901155f999e0449, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -199,7 +199,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Kai
+  m_Name: Nanami
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MoveX
@@ -234,7 +234,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KaiIdleRight
+  m_Name: NanamiIdleRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -249,7 +249,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e227442444f9b2049be689c510956016, type: 2}
+  m_Motion: {fileID: 7400000, guid: e417ddad08d9c274290b1e669db356ac, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -290,7 +290,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KaiIdleLeft
+  m_Name: NanamiIdleLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -305,7 +305,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3cd61878cb705ce47a5f379da145d75c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6500822ae1c3ceb4e9171a6d3f544a9d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -374,7 +374,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KaiWalkRight
+  m_Name: NanamiWalkRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -389,7 +389,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 62cf40dc69168bb45a715a056d28dbea, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1e88abc06aa2aaf4b87fde5c5b1dc981, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
