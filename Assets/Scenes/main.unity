@@ -2278,7 +2278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   npcPrefabs:
-  - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
+  - {fileID: 8208606778082637732, guid: a0ef3ce995f98f04ab5c7fe3db85ae8b, type: 3}
   - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
   - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
   - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}

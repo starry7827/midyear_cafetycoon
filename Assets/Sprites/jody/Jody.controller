@@ -148,7 +148,7 @@ AnimatorStateMachine:
     m_Position: {x: 510, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9150958299858948680}
-    m_Position: {x: 520, y: 280, z: 0}
+    m_Position: {x: 510, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6685156513092695309}
     m_Position: {x: 390, y: 90, z: 0}
@@ -172,7 +172,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC1WalkLeft
+  m_Name: JodyWalkLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -187,7 +187,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3b111ae9c96dd9c4fbd296fd443b63da, type: 2}
+  m_Motion: {fileID: 7400000, guid: b804444837662e34982f68861394180a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -199,7 +199,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC1
+  m_Name: Jody
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MoveX
@@ -234,7 +234,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC1IdleRight
+  m_Name: JodyIdleRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -249,7 +249,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40402d9d49ae57b48af2c06c411462ef, type: 2}
+  m_Motion: {fileID: 7400000, guid: ab4d1a4d6cdc0aa47a2e4bdb11e259e9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -290,7 +290,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC1IdleLeft
+  m_Name: JodyIdleLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -305,7 +305,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f08ec36cb4ab323469c218c96b000d36, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1d464ae9d90afcf4f94fffedf1c6648f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -374,7 +374,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC1WalkRight
+  m_Name: JodyWalkRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -389,7 +389,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8db6fb539bcfcd44db600a6142ce3a38, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7dc24f8a0da7fcb47a05ef87ef835856, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
