@@ -30,7 +30,6 @@ public class OrderManager : MonoBehaviour
 
         if (npcManager == null || player == null || boxCenter == null) return;
 
-        // 1. Check Player Position
         Vector2 p = player.position;
         Vector2 c = boxCenter.position;
         float halfW = boxWidth / 2f;

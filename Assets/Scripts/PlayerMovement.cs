@@ -54,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         {
 
             if (Input.GetKeyDown(KeyCode.E))
-                DeliverToNPC(npcOrder);
+            {
+                NPCManager.Instance.DeliverToNPC(npcOrder);
+            }
         }
     }
 
@@ -80,16 +82,12 @@ public class PlayerMovement : MonoBehaviour
 
         npcOrder = other.GetComponent<NPCOrder>(); // i hope i didnt f this up but basically it checks if it has an order and if it doesnt it goes on to the other part that u had to differenciate npc interaction and the other stuff
 
-        if (npcOrder != null)
+        if (npcOrder != null && npcOrder.orderTaken)
         {
             Debug.Log("Click E to deliver order to customer!!!!!!!");
             npcinteractable = true;
-
-            if (npcOrder.orderTaken)
-            {
-                NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
-                popup.Display();
-            }
+            NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
+            popup.Display();
         }
 
 
@@ -100,26 +98,7 @@ public class PlayerMovement : MonoBehaviour
         currentInteractable.Glow();
     }
 
-    private void DeliverToNPC(NPCOrder order)
-    {
-        PlayerManager pm = PlayerManager.Instance;
-        if (!order.orderTaken)
-            return;
-        if (pm.currentDrinkInHand == order.drink)
-        {
-            Debug.Log("Order Delivered! Correct Drink: " + order.drink);
-            pm.AddMoney(15); // we gotta change this to make it work depending on what the drink is but that should be easy since we can just access order.drink here
-            pm.ClearInventory();
 
-            NPCMovement move = order.GetComponent<NPCMovement>();
-            move.setPath(new List<Vector2> { new Vector2(103f, -38f) });
-            move.destroy = true;
-        }
-        else
-        {
-            Debug.Log("Wrong item! This NPC wants: " + order.drink);
-        }
-    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -127,11 +106,9 @@ public class PlayerMovement : MonoBehaviour
         if (popup != null)
         {
             popup.HidePopup();
+            npcOrder = null;
+            npcinteractable = false;
         }
-
-        npcOrder = null;
-        npcinteractable = false;
-        Debug.Log("fuh");
         if (!other.isTrigger || interactionTrigger.IsTouching(other)) return;
         IInteractable interactable = other.GetComponent<IInteractable>();
 
