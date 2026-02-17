@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;   
+using System.Collections.Generic;
 
 public class NPCMovement : MonoBehaviour
 {
@@ -10,7 +10,8 @@ public class NPCMovement : MonoBehaviour
     public SpriteRenderer npc;
     public bool hasPath = false;
     public Animator animator;
-    
+    public bool destroy = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,12 +27,15 @@ public class NPCMovement : MonoBehaviour
     {
         if (!hasPath)
         {
-            if (paths.Count > 0){
+            if (paths.Count > 0)
+            {
                 currentPath = paths.Dequeue();
                 hasPath = true;
             }
             else
-                return;
+                if (destroy)
+                    Destroy(gameObject);
+            return;
         }
         lastPos = transform.position;
         transform.position = Vector2.MoveTowards(transform.position, currentPath, speed * Time.deltaTime);
@@ -39,7 +43,7 @@ public class NPCMovement : MonoBehaviour
         if (Vector2.Distance(transform.position, currentPath) < 0.1f)
             hasPath = false;
 
-        animator.SetFloat("MoveX", (transform.position-lastPos).x);
+        animator.SetFloat("MoveX", (transform.position - lastPos).x);
         animator.SetBool("Moving", hasPath);
     }
 
@@ -55,6 +59,6 @@ public class NPCMovement : MonoBehaviour
     public void addPoint(Vector2 point)
     {
         paths.Enqueue(point);
-        
+
     }
 }

@@ -15,6 +15,7 @@ public class NPCOrderPopUpController : MonoBehaviour
 
     private GameObject popupInstance;
 
+
     void Awake()
     {
         popupInstance = Instantiate(popupPrefab, transform);
@@ -24,7 +25,7 @@ public class NPCOrderPopUpController : MonoBehaviour
         itemIcon1 = popupInstance.transform.Find("IconContainer/ItemIcon1").GetComponent<Image>();
         itemIcon2 = popupInstance.transform.Find("IconContainer/ItemIcon2").GetComponent<Image>();
         takeOrderText = popupInstance.transform.Find("TakeOrderText").gameObject;
-        
+
         popupInstance.SetActive(false);
     }
 
@@ -58,5 +59,11 @@ public class NPCOrderPopUpController : MonoBehaviour
 
     public void HidePopup(){
         popupInstance.SetActive(false);
+    }
+
+    public void Display()
+    {
+        Debug.Log("appear!");
+        popupInstance.SetActive(true);
     }
 }

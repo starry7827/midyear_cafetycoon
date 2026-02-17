@@ -50,8 +50,12 @@ public class PlayerMovement : MonoBehaviour
                 currentInteractable.Interact();
             }
         }
-        if (npcinteractable && Input.GetKeyDown(KeyCode.E))
-            DeliverToNPC(npcOrder);
+        if (npcinteractable)
+        {
+
+            if (Input.GetKeyDown(KeyCode.E))
+                DeliverToNPC(npcOrder);
+        }
     }
 
     /* void LateUpdate() {
@@ -80,6 +84,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Click E to deliver order to customer!!!!!!!");
             npcinteractable = true;
+
+            if (npcOrder.orderTaken)
+            {
+                NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
+                popup.Display();
+            }
         }
 
 
@@ -93,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
     private void DeliverToNPC(NPCOrder order)
     {
         PlayerManager pm = PlayerManager.Instance;
-
+        if (!order.orderTaken)
+            return;
         if (pm.currentDrinkInHand == order.drink)
         {
             Debug.Log("Order Delivered! Correct Drink: " + order.drink);
@@ -102,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
             NPCMovement move = order.GetComponent<NPCMovement>();
             move.setPath(new List<Vector2> { new Vector2(103f, -38f) });
+            move.destroy = true;
         }
         else
         {
@@ -111,6 +123,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
+        if (popup != null)
+        {
+            popup.HidePopup();
+        }
+
         npcOrder = null;
         npcinteractable = false;
         Debug.Log("fuh");

@@ -86,10 +86,14 @@ public class NPCManager : MonoBehaviour
 
         NPCOrder order = orderPlaced.GetComponent<NPCOrder>();
         Debug.Log("Order taken: " + order.drink + " + " + order.food);
+        // how do i set the thing to true here
+
+        order.orderTaken = true;
 
         Vector2 afterOrderPos = new Vector2(35f, 20f);
-        Vector2 counterPickupPos = new Vector2(-4f, 40f);
+        Vector2 counterPickupPos = new Vector2/*(-4f, 40f)*/(58f, 24f);
         orderPlaced.setPath(new List<Vector2> {afterOrderPos,counterPickupPos});
+
 
         updateLinePos();
     }

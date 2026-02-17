@@ -4,6 +4,7 @@ public class NPCOrder : MonoBehaviour
 {
     public Drink drink;
     public Food food;
+    public bool orderTaken = false;
 
 
     void Start()
