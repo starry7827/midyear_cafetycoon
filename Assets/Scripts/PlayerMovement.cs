@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer rend;
     private IInteractable currentInteractable;
+    private bool npcinteractable = false;
+    private NPCOrder npcOrder;
     [SerializeField] private Collider2D interactionTrigger;
     [SerializeField] private Collider2D physics;
     // private GameObject interactable;
@@ -24,23 +28,30 @@ public class PlayerMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
-        if (animator != null) {
-            if (moveInput != Vector2.zero) {
+        if (animator != null)
+        {
+            if (moveInput != Vector2.zero)
+            {
                 animator.SetBool("Moving", true);
                 animator.SetFloat("MoveX", moveInput.x);
                 animator.SetFloat("MoveY", moveInput.y);
             }
-            else {
+            else
+            {
                 animator.SetBool("Moving", false);
             }
         }
-        if (currentInteractable != null) {
+        if (currentInteractable != null)
+        {
             KeyCode key = currentInteractable.GetInteractKey();
-            if (Input.GetKeyDown(key)) {
+            if (Input.GetKeyDown(key))
+            {
                 Debug.Log("trying to interact: " + currentInteractable);
                 currentInteractable.Interact();
             }
         }
+        if (npcinteractable && Input.GetKeyDown(KeyCode.E))
+            DeliverToNPC(npcOrder);
     }
 
     /* void LateUpdate() {
@@ -63,6 +74,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!interactionTrigger.IsTouching(other) || !other.isTrigger || physics.IsTouching(other)) return;
 
+        npcOrder = other.GetComponent<NPCOrder>(); // i hope i didnt f this up but basically it checks if it has an order and if it doesnt it goes on to the other part that u had to differenciate npc interaction and the other stuff
+
+        if (npcOrder != null)
+        {
+            Debug.Log("Click E to deliver order to customer!!!!!!!");
+            npcinteractable = true;
+        }
+
+
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable == null || !interactable.CanInteract()) return;
 
@@ -70,12 +90,35 @@ public class PlayerMovement : MonoBehaviour
         currentInteractable.Glow();
     }
 
+    private void DeliverToNPC(NPCOrder order)
+    {
+        PlayerManager pm = PlayerManager.Instance;
+
+        if (pm.currentDrinkInHand == order.drink)
+        {
+            Debug.Log("Order Delivered! Correct Drink: " + order.drink);
+            pm.AddMoney(15); // we gotta change this to make it work depending on what the drink is but that should be easy since we can just access order.drink here
+            pm.ClearInventory();
+
+            NPCMovement move = order.GetComponent<NPCMovement>();
+            move.setPath(new List<Vector2> { new Vector2(103f, -38f) });
+        }
+        else
+        {
+            Debug.Log("Wrong item! This NPC wants: " + order.drink);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
+        npcOrder = null;
+        npcinteractable = false;
+        Debug.Log("fuh");
         if (!other.isTrigger || interactionTrigger.IsTouching(other)) return;
         IInteractable interactable = other.GetComponent<IInteractable>();
 
-        if (interactable != null) {
+        if (interactable != null)
+        {
             interactable.Close();
             interactable.Regular();
             if (interactable == currentInteractable)
@@ -83,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
                 currentInteractable = null;
 
             }
-        } 
+        }
     }
 
     /* private void OnTriggerExit2D(Collider2D other)

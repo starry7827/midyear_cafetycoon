@@ -87,8 +87,9 @@ public class NPCManager : MonoBehaviour
         NPCOrder order = orderPlaced.GetComponent<NPCOrder>();
         Debug.Log("Order taken: " + order.drink + " + " + order.food);
 
-        Vector2 afterOrderPos = new Vector2(30f, 0f);
-        orderPlaced.setPath(new List<Vector2> { afterOrderPos });
+        Vector2 afterOrderPos = new Vector2(35f, 20f);
+        Vector2 counterPickupPos = new Vector2(-4f, 40f);
+        orderPlaced.setPath(new List<Vector2> {afterOrderPos,counterPickupPos});
 
         updateLinePos();
     }

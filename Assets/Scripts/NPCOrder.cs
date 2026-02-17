@@ -8,8 +8,8 @@ public class NPCOrder : MonoBehaviour
 
     void Start()
     {
-        drink = (Drink)Random.Range(0, System.Enum.GetValues(typeof(Drink)).Length);
-        food = (Food)Random.Range(0, System.Enum.GetValues(typeof(Food)).Length);
+        drink = (Drink)Random.Range(0, 2/*System.Enum.GetValues(typeof(Drink)).Length*/);
+        food = (Food)3 /*(Food)Random.Range(0, System.Enum.GetValues(typeof(Food)).Length)*/;
 
         if (drink == Drink.NoDrink && food == Food.NoFood)
         {
