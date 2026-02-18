@@ -149,10 +149,12 @@ public class NPCManager : MonoBehaviour
             pm.ClearInventory();
 
             NPCMovement move = order.GetComponent<NPCMovement>();
-            move.setPath(new List<Vector2> { new Vector2(103f, -28f) });
-            pickupLine.RemoveAt(0);
-            updatePickupLinePos();
-            move.destroy = true;
+            if (pickupLine.Contains(move)){
+                move.setPath(new List<Vector2> { new Vector2(103f, -28f) });
+                pickupLine.RemoveAt(pickupLine.IndexOf(move));
+                updatePickupLinePos();
+                move.destroy = true;
+            }
         }
         else
         {

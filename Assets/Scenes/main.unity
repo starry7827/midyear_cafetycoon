@@ -2284,7 +2284,7 @@ MonoBehaviour:
   - {fileID: 8208606778082637732, guid: d62c601dcdfc8164b8afc419da765cc0, type: 3}
   - {fileID: 8208606778082637732, guid: 9de3ec2553852ef499f501a8f9e3b899, type: 3}
   - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
-  spawnInterval: 10
+  spawnInterval: 20
   spawnPos: {x: 103, y: -38}
   frontPos: {x: -1, y: 6}
   spacing: 25
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   money: 0
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 646622928}
   currentDrinkInHand: 4
   currentFoodInHand: 3
 --- !u!1 &503405240
