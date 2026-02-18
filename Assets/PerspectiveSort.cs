@@ -23,6 +23,8 @@ public class YSort : MonoBehaviour
         else
             y = rend.bounds.min.y;
 
+        rend.sortingOrder = Mathf.RoundToInt(-y * 100);
+
         if (y > ((x/3) - .25)) {
             rend.sortingOrder = -1;
         } else {
@@ -35,6 +37,6 @@ public class YSort : MonoBehaviour
             rend.sortingOrder = -6;
         }
 
-        // rend.sortingOrder = Mathf.RoundToInt(-y * 100);
+        
     }
 }
