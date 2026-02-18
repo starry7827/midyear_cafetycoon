@@ -1,0 +1,47 @@
+* [33m7e727fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m added an if statement and explained code !
+* [33mf408746[m added espresso to list of possible foods + tested stuff
+* [33me31f46e[m fixed missing files and reset/claim buttons
+* [33me68e7cf[m fixed deliver food bug and added waiting line logic
+* [33mcbe7f97[m made popup with order visible when close to npc after order taken
+* [33m0805f7a[m added order completion and money system
+* [33m04cc3aa[m fixed basil animation
+* [33m6aa186c[m added basil prefab
+* [33mf180dea[m added nanami customer
+* [33m0978bbe[m added first 3 foods + updated pop ups
+* [33me56c6d2[m added kai customer + fixed pop up heights
+* [33m825af74[m added jody customer
+* [33mba16fc9[m added order pop up with icons for actual order
+* [33mc9c158c[m created take order pop up
+* [33m33c489f[m idk what i did
+* [33m24509f2[m added simple order system
+* [33m8d52981[m fixed reset issue and added cup reset
+* [33m1bc5265[m fixed continous pouring bug and added coffee cup resetting
+* [33m0df4466[m added array of npcs to npc manager, adjusted spawn pos for npcs and added max npcs to the line
+* [33ma673118[m fixed animation bug, added espresso animation, started implementing hot cocoa animations
+* [33m10b3fd4[m fixed cold latte pouring animation
+* [33m3e61b76[m turned npc1 into a prefab, fixed animation bug, added summoning and adding npc to line logic, neeed to add a cap and interaction logic as well as player order and collision logic
+* [33m700d252[m tried to fix animations
+* [33m46d6574[m added npc1 with walking animations, created NPCMovement script with logic for a path system for npcs to walk from place to place
+* [33m7094a2f[m changed animatons (need to figure out problem with latte)
+* [33m15b3fdb[m fixed sincying issues, started other animations
+* [33m96edeec[m added pouring animations and reset button (once finished drink is pressed
+* [33m5d71686[m added basic image showing for cold coffee pour animation next
+* [33mffa0945[m added basic cup filling animations to cold latte and hot latte
+* [33mcbf7a1f[m fixed coffee machine button null error and added new grate + shadows + nozzel for actual coffee making part
+* [33m5bf184c[m almost functioning coffee machine: can add cup, select coffee, and pour will check if its right and will also remove cup and pour check when closed
+* [33m0f54bac[m added semi-functioning menu; added design and clickable buttons with no functions for drinks, added cup dragging.
+* [33md5f0c7a[m fixed front counter & door hitboxes
+* [33m489f84c[m changed some glow hitboxes and started implementing coffee creation menu
+* [33m3150d08[m added glowing
+* [33m9c5b028[m fixed most collides, fixed layer issues, added door collision and animation.
+* [33m44a7be4[m changed layer numbers & player order fixes
+* [33mb69f9e0[m fix git lfs tracking and remove macos junk files from repository
+* [33m39ae795[m added coffee machine, cash register, fixed player,, optimized colliders, added door
+* [33m67a48b7[m added back wall and counter door
+* [33m65ecec3[m added back counter, up + down animations, optimized counter colliders
+* [33meefa54d[m added counters + hitboxes, added proper perspective to front counter
+* [33m331ac39[m fixed scaling, fixed hitboxes, added player animations, added details to mm ui, added 'Café Haven,'
+* [33m7d25179[m created a basic (with placeholder buttons) main menu starting UI and finished basic border hitboxes on gameplay
+* [33m92f865c[m added wall and floor textures, added some hitboxes, bottom border, added character sprite
+* [33m3478354[m set unity editor version control settings
+* [33m9d5b6af[m initial unity project

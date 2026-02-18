@@ -2526,11 +2526,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   npcPrefabs:
+  - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
   - {fileID: 8208606778082637732, guid: a0ef3ce995f98f04ab5c7fe3db85ae8b, type: 3}
   - {fileID: 8208606778082637732, guid: 36dd5307485773041baddd40d6ae213b, type: 3}
   - {fileID: 8208606778082637732, guid: d62c601dcdfc8164b8afc419da765cc0, type: 3}
   - {fileID: 8208606778082637732, guid: 9de3ec2553852ef499f501a8f9e3b899, type: 3}
-  - {fileID: 8208606778082637732, guid: ab9256fa7c9fd314db088173f8b70956, type: 3}
+  - {fileID: 8208606778082637732, guid: 58bc2dab946e51f44b72b18f72487da0, type: 3}
+  - {fileID: 8208606778082637732, guid: 67ae65a902db3f8439a8cdc56a566630, type: 3}
+  - {fileID: 8208606778082637732, guid: 32a11b6bd13a06340878747da60ccd8e, type: 3}
   spawnInterval: 20
   spawnPos: {x: 103, y: -38}
   frontPos: {x: -1, y: 6}
