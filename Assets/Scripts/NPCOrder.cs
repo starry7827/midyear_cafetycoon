@@ -9,15 +9,15 @@ public class NPCOrder : MonoBehaviour
 
     void Start()
     {
-        drink = (Drink)Random.Range(0, 2/*System.Enum.GetValues(typeof(Drink)).Length*/);
+        drink = (Drink)Random.Range(0, 3/*System.Enum.GetValues(typeof(Drink)).Length*/);
         food = (Food)3 /*(Food)Random.Range(0, System.Enum.GetValues(typeof(Food)).Length)*/;
 
         if (drink == Drink.NoDrink && food == Food.NoFood)
         {
             if (Random.Range(0, 2) == 0)
-                drink = (Drink)Random.Range(0, System.Enum.GetValues(typeof(Drink)).Length-1);
+                drink = (Drink)Random.Range(0, System.Enum.GetValues(typeof(Drink)).Length - 1);
             else
-                food = (Food)Random.Range(0, System.Enum.GetValues(typeof(Food)).Length-1);
+                food = (Food)Random.Range(0, System.Enum.GetValues(typeof(Food)).Length - 1);
         }
         Debug.Log("NPC wants: " + drink + " + " + food);
     }

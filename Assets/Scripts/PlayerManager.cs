@@ -11,32 +11,38 @@ public class PlayerManager : MonoBehaviour
     public Drink currentDrinkInHand = Drink.NoDrink;
     public Food currentFoodInHand = Food.NoFood;
 
-    void Awake() {
+    void Awake()
+    {
         Instance = this;
     }
 
-    void Start() {
+    void Start()
+    {
         UpdateUI();
     }
 
-    public void AddMoney(int amount) {
+    public void AddMoney(int amount)
+    {
         money += amount;
         UpdateUI();
         Debug.Log("Earned money! Total: " + money);
     }
 
-    public void UpdateUI() {
-        if (moneyText != null) 
+    public void UpdateUI()
+    {
+        if (moneyText != null)
             moneyText.text = "$" + money.ToString("N0");
     }
 
-    public void PickUpItem(Drink drink, Food food) {
+    public void PickUpItem(Drink drink, Food food)
+    {
         currentDrinkInHand = drink;
         currentFoodInHand = food;
         Debug.Log("Holding: " + drink + " and " + food);
     }
 
-    public void ClearInventory() {
+    public void ClearInventory()
+    {
         currentDrinkInHand = Drink.NoDrink;
         currentFoodInHand = Food.NoFood;
     }

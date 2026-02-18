@@ -153,6 +153,7 @@ public class CoffeeMachineLogic : MonoBehaviour
         }
         pouring = true;
         float remaining = pourDuration;
+        resetDrinkB.SetActive(false);
         while (remaining > 0f)
         {
             remaining -= Time.deltaTime;
