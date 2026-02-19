@@ -14,6 +14,7 @@ public class CoffeeMachine : MonoBehaviour, IInteractable
     [SerializeField] private int maxCoffee = 2;
     [SerializeField] private GameObject machineUI;
     [SerializeField] private CupDrop cd;
+    [SerializeField] private Animator cupAnimator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -47,7 +48,7 @@ public void Regular() {
     {
         if (machineUI != null && !isOpened) {
             isOpened = OpenMachine();
-        } else if (machineUI != null && isOpened) {
+        } else if (machineUI != null && isOpened && !cfm.getPouringState()) {
             isOpened = CloseMachine();
         }
     }
@@ -56,8 +57,8 @@ public void Regular() {
         if (machineUI != null && isOpened) {
             isOpened = CloseMachine();
         }
-        cfm.resetDrink();
-        cd.reset();
+        //cfm.resetDrink();
+        //cd.reset();
     }
 
     private bool OpenMachine() {

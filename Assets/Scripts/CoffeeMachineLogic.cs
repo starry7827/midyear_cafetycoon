@@ -37,6 +37,10 @@ public class CoffeeMachineLogic : MonoBehaviour
         // animator = GetComponentInChild<Animator>();
     }
 
+    public bool getPouringState() {
+        return pouring;
+    }
+
     public void claimDrinkFunc()
     {
         Debug.Log("claim func running");
@@ -170,7 +174,7 @@ public class CoffeeMachineLogic : MonoBehaviour
         pourAnimator.SetBool("isEspressoPouring", false);
         pourObject.SetActive(false);
         claimDrink.SetActive(true);
-
+        pouring = false;
         //reset();
     }
 
