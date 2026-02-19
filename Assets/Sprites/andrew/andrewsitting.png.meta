@@ -3,8 +3,8 @@ guid: 66b5356a336d765438aaa643375d6c5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5922710158263454358
-    second: npc1sitting_0
+      213: -2754231021604392515
+    second: andrewsitting_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc1sitting_0
+      name: andrewsitting_0
       rect:
         serializedVersion: 2
         x: 99
         y: 39
         width: 242
-        height: 422
+        height: 432
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a65fb1dad7e4ecda0800000000000000
-      internalID: -5922710158263454358
+      spriteID: db1b8e77a7107c9d0800000000000000
+      internalID: -2754231021604392515
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      npc1sitting_0: -5922710158263454358
+      andrewsitting_0: -2754231021604392515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5b210e7907c12d489060c2758f06fd6
+guid: 478905aad18d31247b3ce1f2f3f5d99b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8104756061771592298
-    second: basilsitting_0
+      213: 1660626056599207319
+    second: foodcabinetglow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: basilsitting_0
+      name: foodcabinetglow_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 24
-        width: 242
-        height: 456
+        x: 0
+        y: 0
+        width: 390
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a62f61582b0e97070800000000000000
-      internalID: 8104756061771592298
+      spriteID: 79d7a50a99abb0710800000000000000
+      internalID: 1660626056599207319
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      basilsitting_0: 8104756061771592298
+      foodcabinetglow_0: 1660626056599207319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -259,11 +259,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 66db1ce262adc48388afa24d2b69b71a, type: 3}
   - {fileID: 21300000, guid: 56b75ebfaf119e64d98c5c32c6ab7381, type: 3}
   - {fileID: 21300000, guid: 98eed837a951f46a48f5c7f8b68359ce, type: 3}
-  - {fileID: 21300000, guid: 7316f2d582deefe4494241791dc21e88, type: 3}
   foodSprites:
+  - {fileID: 21300000, guid: b41f024a648b0174cbc8442071bc57aa, type: 3}
   - {fileID: 21300000, guid: ef48c0013c6b6db4381c0d33315a394b, type: 3}
   - {fileID: 21300000, guid: 8c540c59f626e544bb2c1590a1d12975, type: 3}
-  - {fileID: 21300000, guid: b41f024a648b0174cbc8442071bc57aa, type: 3}
   takeOrderText: {fileID: 0}
 --- !u!61 &1232602026528765200
 BoxCollider2D:

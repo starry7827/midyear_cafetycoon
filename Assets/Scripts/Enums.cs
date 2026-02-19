@@ -1,6 +1,6 @@
 public enum Drink
 {
-    HotLatte, ColdLatte, Espresso, HotCocoa, NoDrink
+    HotLatte, ColdLatte, Espresso, NoDrink
 }
 
 public enum CupType
@@ -10,5 +10,5 @@ public enum CupType
 
 public enum Food
 {
-    Crossaint, Cookie, BlueberryMuffin, NoFood
+    Muffin, Crossaint, Cookie, NoFood
 }

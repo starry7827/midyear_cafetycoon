@@ -8,8 +8,8 @@ public class PlayerManager : MonoBehaviour
     public int money = 0;
     public TextMeshProUGUI moneyText;
 
-    public Drink currentDrinkInHand = Drink.NoDrink;
-    public Food currentFoodInHand = Food.NoFood;
+    public Drink currentDrinkInHand;
+    public Food currentFoodInHand;
 
     void Awake()
     {
@@ -19,11 +19,17 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         UpdateUI();
+
     }
 
-    public void AddMoney(int amount)
+    public void AddMoney()
     {
-        money += amount;
+        if (currentDrinkInHand == Drink.ColdLatte) money+= 6;
+        if (currentDrinkInHand == Drink.HotLatte) money+= 5;
+        if (currentDrinkInHand == Drink.Espresso) money+= 3;
+        if (currentFoodInHand == Food.Muffin) money+= 4;
+        if (currentFoodInHand == Food.Crossaint) money+= 3;
+        if (currentFoodInHand == Food.Cookie) money+= 2;
         UpdateUI();
         Debug.Log("Earned money! Total: " + money);
     }
@@ -34,11 +40,16 @@ public class PlayerManager : MonoBehaviour
             moneyText.text = "$" + money.ToString("N0");
     }
 
-    public void PickUpItem(Drink drink, Food food)
+    public void PickUpDrink(Drink drink)
     {
         currentDrinkInHand = drink;
+        Debug.Log("Holding: " + drink + " and " + currentFoodInHand);
+    }
+
+    public void PickUpFood(Food food)
+    {
         currentFoodInHand = food;
-        Debug.Log("Holding: " + drink + " and " + food);
+        Debug.Log("Holding: " + currentDrinkInHand + " and " + food);
     }
 
     public void ClearInventory()

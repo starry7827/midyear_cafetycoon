@@ -23,7 +23,7 @@ public class NPCManager : MonoBehaviour
     private List<NPCMovement> line = new List<NPCMovement>();
     private List<NPCMovement> pickupLine = new List<NPCMovement>();
     private List<NPCMovement> inbetweenLines = new List<NPCMovement>();
-    private List<NPCMovement> seated = new List<NPCMovement>();
+    private NPCMovement[] seated = new NPCMovement[2];
     private Vector2 afterOrderPos = new Vector2(35f, 20f);
 
     public Vector2 firstPos;
@@ -31,12 +31,15 @@ public class NPCManager : MonoBehaviour
 
     public Transform player;
     public float interactRange;
+    private List<int> avail = new List<int>();
 
 
 
     void Start()
     {
         available = new List<GameObject>(npcPrefabs);
+        avail.Add(0);
+        avail.Add(1);
     }
 
     // Update is called once per frame
@@ -50,6 +53,26 @@ public class NPCManager : MonoBehaviour
             spawnNPC();
         }
 
+        for (int i = seated.Length - 1; i >= 0; i--)
+        {
+            if (seated[i] == null) continue;
+            if (seated[i].sittingTimer >= seated[i].sittingLength)
+            {
+                seated[i].sitting = false;
+                seated[i].sittingTimer = 0f;
+                seated[i].sittingLength = 0f;
+                seated[i].setPath(new List<Vector2> { new Vector2(103f, -28f) });
+                avail.Add(i);
+                seated[i].destroy = true;
+                seated[i] = null;
+            }
+            else
+            {
+                seated[i].sittingTimer += Time.deltaTime;
+            }
+        }
+
+
         if (inbetweenLines.Count > 0)
         {
             for (int i = 0; i < inbetweenLines.Count; i++)
@@ -57,15 +80,17 @@ public class NPCManager : MonoBehaviour
                 NPCMovement npci = inbetweenLines[i];
                 if (Vector2.Distance(npci.transform.position, afterOrderPos) < 0.2f)
                 {
-                    if (!npci.canSit || seated.Count > 2 || Random.Range(0,2) == 0)
+                    if (!npci.canSit || avail.Count <= 0 || Random.Range(0, 5) < 1)
                     {
                         pickupLine.Add(npci);
                         updatePickupLinePos();
                     }
                     else
                     {
-                        seated.Add(npci);
-                        npci.findTable(seated.IndexOf(npci));
+                        seated[avail[0]] = npci;
+                        npci.findTable(avail[0]);
+                        npci.sittingLength = 120f;
+                        avail.RemoveAt(0);
                     }
                     inbetweenLines.RemoveAt(i);
                     break;
@@ -76,7 +101,7 @@ public class NPCManager : MonoBehaviour
 
     void spawnNPC()
     {
-        if (line.Count + pickupLine.Count + inbetweenLines.Count + seated.Count >= maxNPCS)
+        if (line.Count + pickupLine.Count + inbetweenLines.Count + (seated.Length - avail.Count) >= maxNPCS)
             return;
 
 
@@ -151,23 +176,33 @@ public class NPCManager : MonoBehaviour
         PlayerManager pm = PlayerManager.Instance;
         if (!order.orderTaken)
             return;
-        if (pm.currentDrinkInHand == order.drink)
+        NPCMovement move = order.GetComponent<NPCMovement>();
+        if (pm.currentDrinkInHand == order.drink && pm.currentFoodInHand == order.food && !move.delivered)
         {
-            Debug.Log("Order Delivered! Correct Drink: " + order.drink);
-            pm.AddMoney(15); // we gotta change this to make it work depending on what the drink is but that should be easy since we can just access order.drink here
+            Debug.Log("Order Delivered! Correct Drink: " + order.drink + "; Correct Food: " + order.food);
+            move.delivered = true;
+            pm.AddMoney(); // we gotta change this to make it work depending on what the drink is but that should be easy since we can just access order.drink here
             pm.ClearInventory();
-
-            NPCMovement move = order.GetComponent<NPCMovement>();
-            if (pickupLine.Contains(move)){
-                move.setPath(new List<Vector2> { new Vector2(103f, -28f) });
-                pickupLine.RemoveAt(pickupLine.IndexOf(move));
-                updatePickupLinePos();
-                move.destroy = true;
+            Debug.Log("hi???");
+            Debug.Log("???????????????????" + move.sitting);
+            if (!move.sitting)
+            {
+                if (pickupLine.Contains(move))
+                {
+                    move.setPath(new List<Vector2> { new Vector2(103f, -28f) });
+                    pickupLine.RemoveAt(pickupLine.IndexOf(move));
+                    updatePickupLinePos();
+                    move.destroy = true;
+                }
+            }
+            else
+            {
+                move.sittingLength = Random.Range(45f, 91f);
             }
         }
         else
         {
-            Debug.Log("Wrong item! This NPC wants: " + order.drink);
+            Debug.Log("Wrong item! This NPC wants: " + order.drink + " and " + order.food);
         }
     }
 

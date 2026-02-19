@@ -68,7 +68,7 @@ public class NPCOrderPopUpController : MonoBehaviour
     public void Display()
     {
         Debug.Log("appear!");
-        offset = new Vector3(-10f, 15f, -0.1f);
+        offset = new Vector3(-18f, 15f, -0.1f);
         popupInstance.transform.localPosition = offset;
         popupInstance.SetActive(true);
     }

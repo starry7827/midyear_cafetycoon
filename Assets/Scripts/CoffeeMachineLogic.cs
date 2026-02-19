@@ -44,7 +44,7 @@ public class CoffeeMachineLogic : MonoBehaviour
     public void claimDrinkFunc()
     {
         Debug.Log("claim func running");
-        PlayerManager.Instance.PickUpItem(drink, Food.NoFood);
+        PlayerManager.Instance.PickUpDrink(drink);
         currentCup = CupType.NoCup;
         drink = Drink.NoDrink;
         buttonBg.color = new Color32(247, 103, 103, 255);
@@ -96,14 +96,14 @@ public class CoffeeMachineLogic : MonoBehaviour
         tryEnable();
     }
 
-    public void HotCocoa()
-    {
-        drink = Drink.HotCocoa;
-        DrinkSelected = true;
-        MachineState = "DrinkSelected";
-        updateTimeUI(15f);
-        tryEnable();
-    }
+    // public void HotCocoa()
+    // {
+    //     drink = Drink.HotCocoa;
+    //     DrinkSelected = true;
+    //     MachineState = "DrinkSelected";
+    //     updateTimeUI(15f);
+    //     tryEnable();
+    // }
 
     public void Pour()
     {
