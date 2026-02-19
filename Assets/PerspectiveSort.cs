@@ -28,7 +28,7 @@ public class YSort : MonoBehaviour
         if (y > ((x/3) - .25)) {
             rend.sortingOrder = -1;
         } else {
-            rend.sortingOrder = 3;
+            rend.sortingOrder = 8;
         }
         if (x <= -75 && transform.position.y <= -13.72) {
             rend.sortingOrder = 3;
