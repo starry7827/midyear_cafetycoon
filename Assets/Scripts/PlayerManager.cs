@@ -33,9 +33,9 @@ public class PlayerManager : MonoBehaviour
         if (currentDrinkInHand == Drink.ColdLatte) moneyg = 6;
         if (currentDrinkInHand == Drink.HotLatte) moneyg = 5;
         if (currentDrinkInHand == Drink.Espresso) moneyg = 3;
-        if (currentFoodInHand == Food.Muffin) moneyg = 4;
-        if (currentFoodInHand == Food.Crossaint) moneyg = 3;
-        if (currentFoodInHand == Food.Cookie) moneyg = 2;
+        if (currentFoodInHand == Food.Muffin) moneyg += 4;
+        if (currentFoodInHand == Food.Crossaint) moneyg += 3;
+        if (currentFoodInHand == Food.Cookie) moneyg += 2;
         money += moneyg;
         StartCoroutine(popUp());
         moneyg = 0;
@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Holding: " + drink + " and " + currentFoodInHand);
         animator.SetBool("Holding", true);
         if (PlayerMovement.Instance != null && PlayerMovement.Instance.trayScript != null)
-            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand); 
+            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand);
     }
 
     public void PickUpFood(Food food)
@@ -77,7 +77,7 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Holding: " + currentDrinkInHand + " and " + food);
         animator.SetBool("Holding", true);
         if (PlayerMovement.Instance != null && PlayerMovement.Instance.trayScript != null)
-            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand); 
+            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand);
     }
 
     public void ClearInventory()

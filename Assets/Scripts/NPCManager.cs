@@ -56,7 +56,7 @@ public class NPCManager : MonoBehaviour
         for (int i = seated.Length - 1; i >= 0; i--)
         {
             if (seated[i] == null) continue;
-            if (seated[i].delivered) 
+            if (seated[i].delivered)
             {
                 seated[i].sittingTimer += Time.deltaTime;
 
@@ -183,8 +183,9 @@ public class NPCManager : MonoBehaviour
             move.delivered = true;
             pm.AddMoney(); // we gotta change this to make it work depending on what the drink is but that should be easy since we can just access order.drink here
             pm.ClearInventory();
-            Debug.Log("hi???");
-            Debug.Log("???????????????????" + move.sitting);
+
+            NPCOrderPopUpController popup = order.GetComponent<NPCOrderPopUpController>();
+
             if (!move.sitting)
             {
                 if (pickupLine.Contains(move))
@@ -197,7 +198,10 @@ public class NPCManager : MonoBehaviour
             }
             else
             {
+                move.sittingTimer = 0f;
                 move.sittingLength = Random.Range(45f, 91f);
+                if (popup != null)
+                    popup.showDeliveredFood(order.drink, order.food);
             }
         }
         else

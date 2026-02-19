@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 8686286203469154237}
   - component: {fileID: 2406167554045054459}
   - component: {fileID: 9213041551570658835}
+  - component: {fileID: 1021117358953973400}
   m_Layer: 5
   m_Name: Tray
   m_TagString: Untagged
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &9213041551570658835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +168,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1021117358953973400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846132527777857587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0625b0343a9154b95671843eed479b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrayLayer
+  tray: {fileID: 4347451474852951414}
+  canvas: {fileID: 0}
 --- !u!1 &3842011015646386882
 GameObject:
   m_ObjectHideFlags: 0

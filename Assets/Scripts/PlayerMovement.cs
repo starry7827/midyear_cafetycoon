@@ -104,7 +104,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Click E to deliver order to customer!!!!!!!");
             npcinteractable = true;
             NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
-            popup.Display();
+            if (!other.GetComponent<NPCMovement>().delivered)
+                popup.Display();
         }
 
 
@@ -120,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         NPCOrderPopUpController popup = other.GetComponent<NPCOrderPopUpController>();
-        if (popup != null)
+        if (popup != null && !other.GetComponent<NPCMovement>().delivered)
         {
             popup.HidePopup();
             npcOrder = null;

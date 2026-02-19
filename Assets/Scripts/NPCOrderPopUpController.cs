@@ -13,6 +13,7 @@ public class NPCOrderPopUpController : MonoBehaviour
 
     private Image itemIcon1;
     private Image itemIcon2;
+    private Image bubble;
     public GameObject takeOrderText;
 
     private GameObject popupInstance;
@@ -27,6 +28,7 @@ public class NPCOrderPopUpController : MonoBehaviour
 
         itemIcon1 = popupInstance.transform.Find("IconContainer/ItemIcon1").GetComponent<Image>();
         itemIcon2 = popupInstance.transform.Find("IconContainer/ItemIcon2").GetComponent<Image>();
+        bubble = popupInstance.transform.Find("Image").GetComponent<Image>();
         takeOrderText = popupInstance.transform.Find("TakeOrderText").gameObject;
 
         popupInstance.SetActive(false);
@@ -71,5 +73,30 @@ public class NPCOrderPopUpController : MonoBehaviour
         offset = new Vector3(-18f, 15f, -0.1f);
         popupInstance.transform.localPosition = offset;
         popupInstance.SetActive(true);
+    }
+
+    public void showDeliveredFood(Drink drink, Food food)
+    {
+        Vector3 tableOffset = new Vector3(15f, -5f, -0.1f);
+        popupInstance.transform.localPosition = tableOffset;
+        popupInstance.SetActive(true);
+        takeOrderText.SetActive(false);
+        bubble.gameObject.SetActive(false);
+
+        if (drink != Drink.NoDrink && (int)drink < drinkSprites.Length)
+        {
+            itemIcon1.sprite = drinkSprites[(int)drink];
+            itemIcon1.gameObject.SetActive(true);
+        }
+        else { itemIcon1.gameObject.SetActive(false); }
+
+        if (food != Food.NoFood && (int)food < foodSprites.Length)
+        {
+            itemIcon2.sprite = foodSprites[(int)food];
+            itemIcon2.gameObject.SetActive(true);
+        }
+        else { itemIcon2.gameObject.SetActive(false); }
+
+        popupInstance.transform.localScale = new Vector3(.15f, .15f, .15f);
     }
 }
