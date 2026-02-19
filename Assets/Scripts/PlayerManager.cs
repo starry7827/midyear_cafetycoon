@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance; // Makes it easy to access from other scripts
 
-    public int money = 1000;
+    public int money = 0;
     public int moneyg = 0;
     public TextMeshProUGUI moneyText;
 
@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         UpdateUI();
         mg.gameObject.SetActive(false);
-
+        money += 1000;
     }
 
     public void AddMoney()
