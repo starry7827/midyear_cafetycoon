@@ -12,7 +12,7 @@ public class Upgrades : MonoBehaviour
     private bool isOpened;
     private bool u1p;
     private bool u2p;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,41 +31,49 @@ public class Upgrades : MonoBehaviour
         menu();
     }
 
-    public void interact() {
-        if (!isOpened) {
+    public void interact()
+    {
+        if (!isOpened)
+        {
             upgradeMenu.SetActive(true);
             isOpened = true;
         }
-        else {
+        else
+        {
             upgradeMenu.SetActive(false);
             isOpened = false;
         }
     }
 
-    private void menu() {
-        // Debug.Log("money: " + pm.money);
-        if (pm.money >= 300 && !u1p) {
-            board.interactable = true;
-        } else {
-            board.interactable = false;
-        }
-
-        if (pm.money >= 700 && !u2p) {
-            lights.interactable = true;
-        } else {
-            lights.interactable = false;
-        }
+    private void menu()
+{
+    if (pm == null) 
+    {
+        pm = PlayerManager.Instance;
+        return; 
     }
 
-    public void upgradeBoard() {
+    if (board != null && lights != null)
+    {
+        // Now it's safe to check money
+        board.interactable = pm.money >= 300 && !u1p;
+        lights.interactable = pm.money >= 700 && !u2p;
+    }
+}
+
+    public void upgradeBoard()
+    {
         boardUp.SetActive(true);
         board.interactable = false;
+        pm.money -= 300;
         u1p = true;
     }
 
-    public void upgradeLights() {
+    public void upgradeLights()
+    {
         lightsUp.SetActive(true);
         lights.interactable = false;
+        pm.money -= 700;
         u2p = true;
     }
 }
