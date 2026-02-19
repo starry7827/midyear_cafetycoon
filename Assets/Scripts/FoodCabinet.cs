@@ -55,7 +55,7 @@ public class FoodCabinet : MonoBehaviour
         if (Input.GetKeyDown(one) && foodCounts[0] > 0)
         {
             foodCounts[0]--;
-            pm.currentFoodInHand = Food.Muffin;
+            pm.PickUpFood(Food.Muffin);
             Debug.Log("Picked up Muffin!");
             if (foodCounts[0] == 0)
                 muffin.SetActive(false);
@@ -63,7 +63,7 @@ public class FoodCabinet : MonoBehaviour
         else if (Input.GetKeyDown(two) && foodCounts[1] > 0)
         {
             foodCounts[1]--;
-            pm.currentFoodInHand = Food.Crossaint;
+            pm.PickUpFood(Food.Crossaint);
             Debug.Log("Picked up Crossaint!");
             if (foodCounts[1] == 0)
                 crossaint.SetActive(false);
@@ -71,7 +71,7 @@ public class FoodCabinet : MonoBehaviour
         else if (Input.GetKeyDown(three) && foodCounts[2] > 0)
         {
             foodCounts[2]--;
-            pm.currentFoodInHand = Food.Cookie;
+            pm.PickUpFood(Food.Cookie);
             Debug.Log("Picked up Cookie!");
             if (foodCounts[2] == 0)
                 cookie.SetActive(false);

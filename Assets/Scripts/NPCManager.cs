@@ -56,19 +56,19 @@ public class NPCManager : MonoBehaviour
         for (int i = seated.Length - 1; i >= 0; i--)
         {
             if (seated[i] == null) continue;
-            if (seated[i].sittingTimer >= seated[i].sittingLength)
-            {
-                seated[i].sitting = false;
-                seated[i].sittingTimer = 0f;
-                seated[i].sittingLength = 0f;
-                seated[i].setPath(new List<Vector2> { new Vector2(103f, -28f) });
-                avail.Add(i);
-                seated[i].destroy = true;
-                seated[i] = null;
-            }
-            else
+            if (seated[i].delivered) 
             {
                 seated[i].sittingTimer += Time.deltaTime;
+
+                if (seated[i].sittingTimer >= seated[i].sittingLength)
+                {
+                    // Time to leave!
+                    seated[i].sitting = false;
+                    seated[i].setPath(new List<Vector2> { new Vector2(103f, -28f) });
+                    avail.Add(i); // Free up the seat
+                    seated[i].destroy = true;
+                    seated[i] = null;
+                }
             }
         }
 

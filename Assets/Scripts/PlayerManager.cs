@@ -43,7 +43,8 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Earned money! Total: " + money);
     }
 
-    private IEnumerator popUp() {
+    private IEnumerator popUp()
+    {
         mg.gameObject.SetActive(true);
         mg.text = "+$" + moneyg.ToString("N0");
         float remaining = 3;
@@ -53,7 +54,7 @@ public class PlayerManager : MonoBehaviour
             yield return null;
         }
         mg.gameObject.SetActive(false);
-    } 
+    }
 
     public void UpdateUI()
     {
@@ -66,6 +67,8 @@ public class PlayerManager : MonoBehaviour
         currentDrinkInHand = drink;
         Debug.Log("Holding: " + drink + " and " + currentFoodInHand);
         animator.SetBool("Holding", true);
+        if (PlayerMovement.Instance != null && PlayerMovement.Instance.trayScript != null)
+            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand); 
     }
 
     public void PickUpFood(Food food)
@@ -73,6 +76,8 @@ public class PlayerManager : MonoBehaviour
         currentFoodInHand = food;
         Debug.Log("Holding: " + currentDrinkInHand + " and " + food);
         animator.SetBool("Holding", true);
+        if (PlayerMovement.Instance != null && PlayerMovement.Instance.trayScript != null)
+            PlayerMovement.Instance.trayScript.ShowTrayIcons(currentDrinkInHand, currentFoodInHand); 
     }
 
     public void ClearInventory()
@@ -80,5 +85,6 @@ public class PlayerManager : MonoBehaviour
         currentDrinkInHand = Drink.NoDrink;
         currentFoodInHand = Food.NoFood;
         animator.SetBool("Holding", false);
+        PlayerMovement.Instance.trayScript.HideTray();
     }
 }

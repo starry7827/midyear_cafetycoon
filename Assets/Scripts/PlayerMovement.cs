@@ -12,9 +12,17 @@ public class PlayerMovement : MonoBehaviour
     private IInteractable currentInteractable;
     private bool npcinteractable = false;
     private NPCOrder npcOrder;
+    public Tray trayScript;
     [SerializeField] private Collider2D interactionTrigger;
     [SerializeField] private Collider2D physics;
     // private GameObject interactable;
+
+    public static PlayerMovement Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -28,6 +36,14 @@ public class PlayerMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
+        if (moveInput.x > 0)
+        {
+            trayScript.SetDirection(true);
+        }
+        else if (moveInput.x < 0)
+        {
+            trayScript.SetDirection(false);
+        }
         if (animator != null)
         {
             if (moveInput != Vector2.zero)
@@ -35,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("Moving", true);
                 animator.SetFloat("MoveX", moveInput.x);
                 animator.SetFloat("MoveY", moveInput.y);
+
             }
             else
             {

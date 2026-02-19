@@ -3309,12 +3309,12 @@ MonoBehaviour:
   - {fileID: 8208606778082637732, guid: 58bc2dab946e51f44b72b18f72487da0, type: 3}
   - {fileID: 8208606778082637732, guid: 67ae65a902db3f8439a8cdc56a566630, type: 3}
   - {fileID: 8208606778082637732, guid: 32a11b6bd13a06340878747da60ccd8e, type: 3}
-  spawnInterval: 5
+  spawnInterval: 15
   spawnPos: {x: 103, y: -38}
   frontPos: {x: -6, y: 7}
   spacing: 25
   spacing2: 15
-  maxNPCS: 2
+  maxNPCS: 4
   firstPos: {x: -1, y: 37}
   LastPos: {x: 40, y: 57}
   player: {fileID: 1413614272}
@@ -10602,7 +10602,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.1564345, w: 0.98768836}
   m_LocalPosition: {x: -79.1, y: 5.7, z: 0}
-  m_LocalScale: {x: 1.8371611, y: 1, z: 1}
+  m_LocalScale: {x: 2.1553829, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1823380938}
@@ -10838,6 +10838,7 @@ GameObject:
   - component: {fileID: 1413614273}
   - component: {fileID: 1413614275}
   - component: {fileID: 1413614276}
+  - component: {fileID: 1413614277}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10860,6 +10861,7 @@ MonoBehaviour:
   speed: 50
   animator: {fileID: 1413614274}
   rend: {fileID: 1413614271}
+  trayScript: {fileID: 1413614277}
   interactionTrigger: {fileID: 1413614275}
   physics: {fileID: 1413614273}
 --- !u!50 &1413614270
@@ -10936,7 +10938,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2028490671
   m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 95e9ba62f8d7641eaa28b126ec5c6dcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10957,7 +10959,7 @@ Transform:
   m_GameObject: {fileID: 1413614268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5, y: -10.5, z: 0}
+  m_LocalPosition: {x: -35, y: 15, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11081,6 +11083,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::YSort
   sortPoint: {fileID: 0}
+--- !u!114 &1413614277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413614268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fe95d3b853cb44484a0c58d2829792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tray
+  trayPrefab: {fileID: 2846132527777857587, guid: f83b2fef973c54d41b448c62ff26b484, type: 3}
+  drinkSprites:
+  - {fileID: 21300000, guid: 66db1ce262adc48388afa24d2b69b71a, type: 3}
+  - {fileID: 21300000, guid: 56b75ebfaf119e64d98c5c32c6ab7381, type: 3}
+  - {fileID: 21300000, guid: 98eed837a951f46a48f5c7f8b68359ce, type: 3}
+  foodSprites:
+  - {fileID: 21300000, guid: b41f024a648b0174cbc8442071bc57aa, type: 3}
+  - {fileID: 21300000, guid: ef48c0013c6b6db4381c0d33315a394b, type: 3}
+  - {fileID: 21300000, guid: 8c540c59f626e544bb2c1590a1d12975, type: 3}
+  rightOffset: {x: 15, y: 0}
+  leftOffset: {x: 0, y: 0}
+  idleOffset: {x: 0, y: 0}
 --- !u!1 &1415218861
 GameObject:
   m_ObjectHideFlags: 0
@@ -13012,20 +13038,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1395196403}
     m_ColliderPaths:
-    - - X: -344628192
-        Y: 186263120
-      - X: -353898656
-        Y: 214794800
-      - X: -1171292672
-        Y: -50792704
-      - X: -1162022144
-        Y: -79324392
+    - - X: -268113296
+        Y: 211124336
+      - X: -277383776
+        Y: 239656032
+      - X: -1236361728
+        Y: -71934936
+      - X: -1227091200
+        Y: -100466624
   m_CompositePaths:
     m_Paths:
-    - - {x: -116.20223, y: -7.932411}
-      - {x: -34.46283, y: 18.626339}
-      - {x: -35.389896, y: 21.479471}
-      - {x: -117.12926, y: -5.0792985}
+    - - {x: -122.70914, y: -10.046635}
+      - {x: -26.81134, y: 21.112461}
+      - {x: -27.738407, y: 23.965593}
+      - {x: -123.63616, y: -7.1935215}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
