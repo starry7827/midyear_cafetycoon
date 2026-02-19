@@ -12,24 +12,25 @@ public class NPCManager : MonoBehaviour
     }
 
     public GameObject[] npcPrefabs;
-    public float spawnInterval = 20f; // this can be changed eventually to something that increases as time goes on or something random or we can make it change after one spawns i just made it this for testing
-    public Vector2 spawnPos = new Vector2(103f, -38f);
-    public Vector2 frontPos = new Vector2(-1f, 6f);
-    public float spacing = 25f; // this can also be changed its how far inbetween the npcs
-    public float spacing2 = 10f;
+    public float spawnInterval; // this can be changed eventually to something that increases as time goes on or something random or we can make it change after one spawns i just made it this for testing
+    public Vector2 spawnPos;
+    public Vector2 frontPos;
+    public float spacing; // this can also be changed its how far inbetween the npcs
+    public float spacing2;
     private float timer = 0f;
-    public int maxNPCS = 5;
+    public int maxNPCS;
     private List<GameObject> available;
     private List<NPCMovement> line = new List<NPCMovement>();
     private List<NPCMovement> pickupLine = new List<NPCMovement>();
     private List<NPCMovement> inbetweenLines = new List<NPCMovement>();
+    private List<NPCMovement> seated = new List<NPCMovement>();
     private Vector2 afterOrderPos = new Vector2(35f, 20f);
 
-    public Vector2 firstPos = new Vector2(5f, 30f);
-    public Vector2 LastPos = new Vector2(41f, 38f);
+    public Vector2 firstPos;
+    public Vector2 LastPos;
 
     public Transform player;
-    public float interactRange = 15f;
+    public float interactRange;
 
 
 
@@ -56,9 +57,17 @@ public class NPCManager : MonoBehaviour
                 NPCMovement npci = inbetweenLines[i];
                 if (Vector2.Distance(npci.transform.position, afterOrderPos) < 0.2f)
                 {
-                    pickupLine.Add(npci);
+                    if (!npci.canSit || seated.Count > 2 || Random.Range(0,2) == 0)
+                    {
+                        pickupLine.Add(npci);
+                        updatePickupLinePos();
+                    }
+                    else
+                    {
+                        seated.Add(npci);
+                        npci.findTable(seated.IndexOf(npci));
+                    }
                     inbetweenLines.RemoveAt(i);
-                    updatePickupLinePos();
                     break;
                 }
             }
@@ -67,7 +76,7 @@ public class NPCManager : MonoBehaviour
 
     void spawnNPC()
     {
-        if (line.Count >= maxNPCS)
+        if (line.Count + pickupLine.Count + inbetweenLines.Count + seated.Count >= maxNPCS)
             return;
 
 

@@ -4,20 +4,23 @@ using UnityEngine.UI; // Fixes the Image error
 public class NPCOrderPopUpController : MonoBehaviour
 {
     public GameObject popupPrefab;
-    public Vector3 offset = new Vector3(0f, 1.5f, -0.1f);
+    public float offsetX;
+    public float offsetY;
+    private Vector3 offset;
 
-    public Sprite[] drinkSprites; 
-    public Sprite[] foodSprites;  
+    public Sprite[] drinkSprites;
+    public Sprite[] foodSprites;
 
-    private Image itemIcon1;        
-    private Image itemIcon2;        
-    public GameObject takeOrderText; 
+    private Image itemIcon1;
+    private Image itemIcon2;
+    public GameObject takeOrderText;
 
     private GameObject popupInstance;
 
 
     void Awake()
     {
+        offset = new Vector3(offsetX, offsetY, -0.1f);
         popupInstance = Instantiate(popupPrefab, transform);
         popupInstance.transform.localPosition = offset;
         popupInstance.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
@@ -57,13 +60,16 @@ public class NPCOrderPopUpController : MonoBehaviour
         else { itemIcon2.gameObject.SetActive(false); }
     }
 
-    public void HidePopup(){
+    public void HidePopup()
+    {
         popupInstance.SetActive(false);
     }
 
     public void Display()
     {
         Debug.Log("appear!");
+        offset = new Vector3(-10f, 15f, -0.1f);
+        popupInstance.transform.localPosition = offset;
         popupInstance.SetActive(true);
     }
 }

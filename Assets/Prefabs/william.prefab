@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7914747424347128235}
   - component: {fileID: 1405582505159304572}
   - component: {fileID: -1791277873360851179}
+  - component: {fileID: 8437110543760390238}
   m_Layer: 0
   m_Name: william
   m_TagString: Untagged
@@ -210,6 +211,7 @@ MonoBehaviour:
   hasPath: 0
   animator: {fileID: 0}
   destroy: 0
+  canSit: 0
 --- !u!114 &7914747424347128235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCOrderPopUpController
   popupPrefab: {fileID: 2846132527777857587, guid: bccb976e151c28747a799dd4d5e027e3, type: 3}
-  offset: {x: 0, y: 32, z: 0}
+  offsetX: 0
+  offsetY: 32
   drinkSprites:
   - {fileID: 21300000, guid: 66db1ce262adc48388afa24d2b69b71a, type: 3}
   - {fileID: 21300000, guid: 56b75ebfaf119e64d98c5c32c6ab7381, type: 3}
@@ -262,3 +265,49 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8c540c59f626e544bb2c1590a1d12975, type: 3}
   - {fileID: 21300000, guid: b41f024a648b0174cbc8442071bc57aa, type: 3}
   takeOrderText: {fileID: 0}
+--- !u!61 &8437110543760390238
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208606778082637732}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -19}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 48, y: 48}
+    newSize: {x: 48, y: 48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 13, y: 10}
+  m_EdgeRadius: 0

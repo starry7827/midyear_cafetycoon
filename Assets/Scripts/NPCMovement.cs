@@ -11,12 +11,15 @@ public class NPCMovement : MonoBehaviour
     public bool hasPath = false;
     public Animator animator;
     public bool destroy = false;
+    public bool canSit;
+    private Vector2 table1 = new Vector2(53f,31f);
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         npc = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         lastPos = transform.position;
@@ -45,6 +48,9 @@ public class NPCMovement : MonoBehaviour
 
         animator.SetFloat("MoveX", (transform.position - lastPos).x);
         animator.SetBool("Moving", hasPath);
+
+        if (Vector2.Distance(transform.position, table1) < 0.1f)
+            animator.SetBool("Sitting", true);
     }
 
     public void setPath(List<Vector2> points)
@@ -60,5 +66,16 @@ public class NPCMovement : MonoBehaviour
     {
         paths.Enqueue(point);
 
+    }
+
+    public void findTable(int num)
+    {
+        if (num == 0)
+        {
+            List<Vector2> path = new List<Vector2>();
+            path.Add(new Vector2(23f,26f));
+            path.Add(table1);
+            setPath(path);
+        }
     }
 }
